@@ -12,15 +12,18 @@ knitr::opts_chunk$set(echo = TRUE)
 ## ABOUT A009 AND A010 DQ PROCESS CHECK
 Download A009 and A010 Report with the specifications listed below.  The pull up the PATH dashboard (not a report; just a dashboard in HMIS) and compare them the A0XX reports to the dash and see where the differences are and log them.
 
-#### Project Links:
-* Zenguide_General: https://ncceh.zendesk.com/
+#### GitHub Links:
+* Project Repository: https://github.com/timbender-ncceh/A009_A010_dq/tree/main
+* Project Website: https://timbender-ncceh.github.io/A009_A010_dq/
+* Project Issues / Comments: https://github.com/timbender-ncceh/A009_A010_dq/issues
+
+#### ZenGuide Links:
+* ZenGuide_General: https://ncceh.zendesk.com/
 * A009: https://ncceh.zendesk.com/hc/en-us/articles/16245113253523-A009-PATH-Details-Data-Quality-Report-Guide
 * A010: https://ncceh.zendesk.com/hc/en-us/articles/16273061844883-A010-PATH-Services-Referrals-Report-Guide
 * PATH_Dashboard: https://ncceh.zendesk.com/hc/en-us/articles/15097522537235
-* GitHub Repository: https://github.com/timbender-ncceh/A009_A010_dq/tree/main
 
-## HMIS NAVIGATION 
-
+## PROJECT HOW-TO 
 
 #### From Login 
 * Shadow user [redacted] or [redacted]
@@ -34,26 +37,77 @@ Download A009 and A010 Report with the specifications listed below.  The pull up
 * Click the three dot symbol (…)(⋯) not the name of the report to set it up and run it.  This allows for report configuration. 
 * You will need to select one provider_id (see notes below) and compare to PA
 
+#### QA Steps, Tabled 
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(dplyr)
+library(data.table)
+tbl1 <- expand.grid(report = c("A009", "A010"), 
+            #comparison = "PATH_dash",
+            start_date = "07-01-2022",
+            end_date   = "06-30-2023",
+            notes = "SSO+SO+PATH",
+            pid = sort(c(20538, 20539, 
+                            20478, 20477))) %>%
+  as.data.table()
 
+tbl2 <- data.frame(uid = NA, 
+                   pid = tbl1$pid, 
+                   shadow_user = c(rep("michele knapp", 4), 
+                                   rep("benjamin horton", 4)))
+out1 <- full_join(tbl2,tbl1) %>%
+  .[!duplicated(.),]
 
-#### DOWNLOAD STEPS 
+rownames(out1) <- 1:nrow(out1)
 
-admin/provider admin/ provider search: 
+out1$uid <- paste(substr(out1$pid,
+                        start = nchar(out1$pid)-2, 
+                        stop = nchar(out1$pid)), 
+      unlist(lapply(lapply(strsplit(out1$shadow_user, " "), 
+         substr, start = 1, stop = 1), 
+         paste, sep = "", collapse = "")), 
+      out1$report,
+      sep = "_") 
 
-20539 provider_id - shadow benjamin horton
-20538 provider_id - shadow benjamin horton
-20478 provider_id - shadow michele knapp
-20477 provider_id - shadow michele knapp
+print(out1)
 
-SSO + SO + PATH
+```
 
-reports/path/search
+<!-- admin/provider admin/ provider search:  -->
+<!-- 20539 provider_id - shadow benjamin horton -->
+<!-- 20538 provider_id - shadow benjamin horton -->
+<!-- 20478 provider_id - shadow michele knapp -->
+<!-- 20477 provider_id - shadow michele knapp -->
+<!-- SSO + SO + PATH -->
+<!-- reports/path/search -->
+<!-- 7/1/22 -6/30/23 date range -->
 
-7/1/22 -6/30/23 date range
+## A009 FINDINGS
+#### Current Status
+```{r A009 status, echo=FALSE, message=FALSE, warning=FALSE}
 
-## COMPARISON STEPS 
+tbl09_status <- out1[out1$report =="A009",c("uid","pid")] %>%
+  mutate(., 
+         report_dl = F, 
+         QA_comp   = F) %>%
+  .[!colnames(.) %in% "pid"]
+print(tbl09_status)
+```
 
-## DQ STEPS 
+#### Identified QA Issues
+
+## A010 FINDINGS 
+#### Current Status
+```{r A010 status, echo=FALSE, message=FALSE, warning=FALSE}
+tbl010_status <- out1[out1$report =="A010",c("uid","pid")] %>%
+  mutate(., 
+         report_dl = F, 
+         QA_comp   = F) %>%
+  .[!colnames(.) %in% "pid"]
+print(tbl010_status)
+```
+
+#### Identified QA Issues
+
 
 ## CONCLUSION 
 
