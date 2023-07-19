@@ -113,8 +113,12 @@ print(tbl010_status)
 
 
 ```{r Silent Chunk to copy html output to clipboard, message=TRUE, warning=TRUE, include=FALSE}
-library(htmltools)
-library(utils)
-writeClipboard(str = includeHTML("a009_a010.html"))
+# library(htmltools)
+# library(utils)
+# writeClipboard(str = includeHTML("a009_a010.html"))
+
+file.rename(from = "a009_a010.html", 
+            to = "index.html")
+
 ```
 
