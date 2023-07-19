@@ -1,0 +1,66 @@
+---
+title: "A009 and A010 DQ Checks"
+author: "NCCES_tim_bender"
+date: "`r Sys.time()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## ABOUT A009 AND A010 DQ PROCESS CHECK
+Download A009 and A010 Report with the specifications listed below.  The pull up the PATH dashboard (not a report; just a dashboard in HMIS) and compare them the A0XX reports to the dash and see where the differences are and log them.
+
+#### Project Links:
+* Zenguide_General: https://ncceh.zendesk.com/
+* A009: https://ncceh.zendesk.com/hc/en-us/articles/16245113253523-A009-PATH-Details-Data-Quality-Report-Guide
+* A010: https://ncceh.zendesk.com/hc/en-us/articles/16273061844883-A010-PATH-Services-Referrals-Report-Guide
+* PATH_Dashboard: https://ncceh.zendesk.com/hc/en-us/articles/15097522537235
+* GitHub Repository: https://github.com/timbender-ncceh/A009_A010_dq/tree/main
+
+## HMIS NAVIGATION 
+
+
+#### From Login 
+* Shadow user [redacted] or [redacted]
+* Connect to BusinessObjects
+
+#### Folder Directory 
+* See ZenGuide
+
+#### Query Setup
+* See ZenGuide for filetype and output directions
+* Click the three dot symbol (…)(⋯) not the name of the report to set it up and run it.  This allows for report configuration. 
+* You will need to select one provider_id (see notes below) and compare to PA
+
+
+
+#### DOWNLOAD STEPS 
+
+admin/provider admin/ provider search: 
+
+20539 provider_id - shadow benjamin horton
+20538 provider_id - shadow benjamin horton
+20478 provider_id - shadow michele knapp
+20477 provider_id - shadow michele knapp
+
+SSO + SO + PATH
+
+reports/path/search
+
+7/1/22 -6/30/23 date range
+
+## COMPARISON STEPS 
+
+## DQ STEPS 
+
+## CONCLUSION 
+
+
+```{r Silent Chunk to copy html output to clipboard, message=TRUE, warning=TRUE, include=FALSE}
+library(htmltools)
+library(utils)
+writeClipboard(str = includeHTML("a009_a010.html"))
+```
+
