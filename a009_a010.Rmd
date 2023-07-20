@@ -31,9 +31,13 @@ Total PATH enrolled Clients with Referrals	14
 Total PATH enrolled Clients without Referrals	5 
 "
 proj_summary.a009 <- "Entry Exit Provider Id	Unduplicated Client Count	Number of Entries	Count of Clients with DOE	Number of Exits
-Asheville Buncombe Community Christian Ministries - All BoS Regions - Services Only - SSO - PATH(20539)	122	122	15	63
+Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	185	199	129	153
 "
-
+a009_tabB_DOE_count.red.cells <- 20
+#a009_tabB_DOE_count.green.cells <- 4
+a009_tabB_colH.exited_colJ.missing_colK_missing <- 76 
+a009_tabB_colK.no_colH.noexit <- 6
+a009_tabB_colK.no_colL.missing <- 0
 
 # tidy----
 proj_id   <- prov_prompt %>%
@@ -213,8 +217,44 @@ print(da009)
 ```
 
 #### Review Steps:
-  * [To be included from ZenGuide Report]
-  
+[not sure - read ZenGuide and started answering the review questions but they seemed too specific for this QA Task]
+
+<!-- * Date of Engagement recorded prior to Project Start Date or after the Project Exit Date. -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{a009_tabB_DOE_count.red.cells}")) -->
+<!-- ``` -->
+
+<!-- * Exited clients with a missing Date of Status Determination &/or PATH enrollment Status. These data elements are required by the time a client exits the PATH project. -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{a009_tabB_colH.exited_colJ.missing_colK_missing}")) -->
+<!-- ``` -->
+
+<!-- * Clients marked as "No" for PATH enrollment but are missing a Project Exit Date -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{a009_tabB_colK.no_colH.noexit}")) -->
+<!-- ``` -->
+
+<!-- * Clients marked as "No" for PATH enrollment but are missing the follow up "if no..." data element. -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{a009_tabB_colK.no_colL.missing}")) -->
+<!-- ``` -->
+<!-- * Client is missing a SOAR connection response. This is required at Project Start & can be updated throughout the project stay. -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{}")) -->
+<!-- ``` -->
+<!-- * REVIEW ONLY (may not be an error) Any client in the project more than 90days without Date of Engagement. This could be accurate but worth confirming -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{}")) -->
+<!-- ``` -->
+<!-- * REVIEW ONLY (may not be an error) Any client without a PATH status determination and PATH enrollment but has been in the project more than 90days. -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{}")) -->
+<!-- ``` -->
+<!-- * REVIEW ONLY: Any client appearing twice for the same project. Clients should only have one project stay at a time. Project enrollment dates should not overlap. -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{}")) -->
+<!-- ``` -->
+
 ### A010 Results
 #### Report Data:
 ```{r A010 Data, echo=FALSE, message=FALSE, warning=FALSE}
@@ -258,15 +298,15 @@ cat(glue("{da010$value[6]} == {da010$value[9]} + {da010$value[10]}\n{da010$value
 ### QA FINDINGS
 [to be completed]
 
-#### Current Status
-```{r A010 status, echo=FALSE, message=FALSE, warning=FALSE}
-tbl010_status <- out1[out1$report =="A010",c("uid","pid")] %>%
-  mutate(., 
-         report_dl = F, 
-         QA_comp   = F) %>%
-  .[!colnames(.) %in% "pid"]
-print(tbl010_status)
-```
+<!-- #### Current Status -->
+<!-- ```{r A010 status, echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- tbl010_status <- out1[out1$report =="A010",c("uid","pid")] %>% -->
+<!--   mutate(.,  -->
+<!--          report_dl = F,  -->
+<!--          QA_comp   = F) %>% -->
+<!--   .[!colnames(.) %in% "pid"] -->
+<!-- print(tbl010_status) -->
+<!-- ``` -->
 
 
 

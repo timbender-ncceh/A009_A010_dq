@@ -351,7 +351,7 @@ display: none;
 
 <h1 class="title toc-ignore">A009 and A010 DQ Checks</h1>
 <h4 class="author">NCCES_tim_bender</h4>
-<h4 class="date">2023-07-20 13:57:03</h4>
+<h4 class="date">2023-07-20 14:40:40</h4>
 
 </div>
 
@@ -414,13 +414,43 @@ compare to PA</li>
 <div id="report-data" class="section level4">
 <h4>Report Data:</h4>
 <pre><code>##    prov_id undup_clients n_entries n_clients_wDOE n_exits
-## 1:   20477           122       122             15      63</code></pre>
+## 1:   20477           185       199            129     153</code></pre>
 </div>
 <div id="review-steps" class="section level4">
 <h4>Review Steps:</h4>
-<ul>
-<li>[To be included from ZenGuide Report]</li>
-</ul>
+<p>N/A</p>
+<!-- * Date of Engagement recorded prior to Project Start Date or after the Project Exit Date. -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{a009_tabB_DOE_count.red.cells}")) -->
+<!-- ``` -->
+<!-- * Exited clients with a missing Date of Status Determination &/or PATH enrollment Status. These data elements are required by the time a client exits the PATH project. -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{a009_tabB_colH.exited_colJ.missing_colK_missing}")) -->
+<!-- ``` -->
+<!-- * Clients marked as "No" for PATH enrollment but are missing a Project Exit Date -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{a009_tabB_colK.no_colH.noexit}")) -->
+<!-- ``` -->
+<!-- * Clients marked as "No" for PATH enrollment but are missing the follow up "if no..." data element. -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{a009_tabB_colK.no_colL.missing}")) -->
+<!-- ``` -->
+<!-- * Client is missing a SOAR connection response. This is required at Project Start & can be updated throughout the project stay. -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{}")) -->
+<!-- ``` -->
+<!-- * REVIEW ONLY (may not be an error) Any client in the project more than 90days without Date of Engagement. This could be accurate but worth confirming -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{}")) -->
+<!-- ``` -->
+<!-- * REVIEW ONLY (may not be an error) Any client without a PATH status determination and PATH enrollment but has been in the project more than 90days. -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{}")) -->
+<!-- ``` -->
+<!-- * REVIEW ONLY: Any client appearing twice for the same project. Clients should only have one project stay at a time. Project enrollment dates should not overlap. -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{}")) -->
+<!-- ``` -->
 </div>
 </div>
 <div id="a010-results" class="section level3">
@@ -491,14 +521,15 @@ the reporting period).</li>
 <div id="qa-findings" class="section level3">
 <h3>QA FINDINGS</h3>
 <p>[to be completed]</p>
-<div id="current-status" class="section level4">
-<h4>Current Status</h4>
-<pre><code>##             uid report_dl QA_comp
-## 2 20477_mk_A010     FALSE   FALSE
-## 4 20478_mk_A010     FALSE   FALSE
-## 6 20538_bh_A010     FALSE   FALSE
-## 8 20539_bh_A010     FALSE   FALSE</code></pre>
-</div>
+<!-- #### Current Status -->
+<!-- ```{r A010 status, echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- tbl010_status <- out1[out1$report =="A010",c("uid","pid")] %>% -->
+<!--   mutate(.,  -->
+<!--          report_dl = F,  -->
+<!--          QA_comp   = F) %>% -->
+<!--   .[!colnames(.) %in% "pid"] -->
+<!-- print(tbl010_status) -->
+<!-- ``` -->
 <div id="identified-qa-issues" class="section level4">
 <h4>Identified QA Issues</h4>
 </div>
