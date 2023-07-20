@@ -351,13 +351,13 @@ display: none;
 
 <h1 class="title toc-ignore">A009 and A010 DQ Checks</h1>
 <h4 class="author">NCCES_tim_bender</h4>
-<h4 class="date">2023-07-20 07:55:51</h4>
+<h4 class="date">2023-07-20 10:20:55</h4>
 
 </div>
 
 
-<div id="about-a009-and-a010-dq-process-check" class="section level2">
-<h2>ABOUT A009 AND A010 DQ PROCESS CHECK</h2>
+<div id="overview" class="section level2">
+<h2>OVERVIEW</h2>
 <p>Download A009 and A010 Report with the specifications listed below.
 The pull up the PATH dashboard (not a report; just a dashboard in HMIS)
 and compare them the A0XX reports to the dash and see where the
@@ -365,9 +365,9 @@ differences are and log them.</p>
 <div id="github-links" class="section level4">
 <h4>GitHub Links:</h4>
 <ul>
-<li>Project Repository: <a href="https://github.com/timbender-ncceh/A009_A010_dq/tree/main" class="uri">https://github.com/timbender-ncceh/A009_A010_dq/tree/main</a></li>
-<li>Project Website: <a href="https://timbender-ncceh.github.io/A009_A010_dq/" class="uri">https://timbender-ncceh.github.io/A009_A010_dq/</a></li>
-<li>Project Issues / Comments: <a href="https://github.com/timbender-ncceh/A009_A010_dq/issues" class="uri">https://github.com/timbender-ncceh/A009_A010_dq/issues</a></li>
+<li>Project Website (i.e. this document): <a href="https://timbender-ncceh.github.io/A009_A010_dq/" class="uri">https://timbender-ncceh.github.io/A009_A010_dq/</a></li>
+<li>Repository: <a href="https://github.com/timbender-ncceh/A009_A010_dq/tree/main" class="uri">https://github.com/timbender-ncceh/A009_A010_dq/tree/main</a></li>
+<li>Projet Issues / Comments: <a href="https://github.com/timbender-ncceh/A009_A010_dq/issues" class="uri">https://github.com/timbender-ncceh/A009_A010_dq/issues</a></li>
 </ul>
 </div>
 <div id="zenguide-links" class="section level4">
@@ -404,68 +404,110 @@ it up and run it. This allows for report configuration.</li>
 <li>You will need to select one provider_id (see notes below) and
 compare to PA</li>
 </ul>
-</div>
-<div id="qa-steps-tabled" class="section level4">
-<h4>QA Steps, Tabled</h4>
-<pre><code>##           uid   pid     shadow_user report start_date   end_date       notes
-## 1 477_mk_A009 20477   michele knapp   A009 07-01-2022 06-30-2023 SSO+SO+PATH
-## 2 477_mk_A010 20477   michele knapp   A010 07-01-2022 06-30-2023 SSO+SO+PATH
-## 3 478_mk_A009 20478   michele knapp   A009 07-01-2022 06-30-2023 SSO+SO+PATH
-## 4 478_mk_A010 20478   michele knapp   A010 07-01-2022 06-30-2023 SSO+SO+PATH
-## 5 538_bh_A009 20538 benjamin horton   A009 07-01-2022 06-30-2023 SSO+SO+PATH
-## 6 538_bh_A010 20538 benjamin horton   A010 07-01-2022 06-30-2023 SSO+SO+PATH
-## 7 539_bh_A009 20539 benjamin horton   A009 07-01-2022 06-30-2023 SSO+SO+PATH
-## 8 539_bh_A010 20539 benjamin horton   A010 07-01-2022 06-30-2023 SSO+SO+PATH</code></pre>
-<!-- admin/provider admin/ provider search:  -->
-<!-- 20539 provider_id - shadow benjamin horton -->
-<!-- 20538 provider_id - shadow benjamin horton -->
-<!-- 20478 provider_id - shadow michele knapp -->
-<!-- 20477 provider_id - shadow michele knapp -->
-<!-- SSO + SO + PATH -->
-<!-- reports/path/search -->
-<!-- 7/1/22 -6/30/23 date range -->
+<!-- #### QA Steps, Tabled  -->
+<pre><code>##             uid   pid     shadow_user report start_date   end_date       notes
+## 1 20477_mk_A009 20477   michele knapp   A009 07-01-2022 06-30-2023 SSO+SO+PATH
+## 2 20477_mk_A010 20477   michele knapp   A010 07-01-2022 06-30-2023 SSO+SO+PATH
+## 3 20478_mk_A009 20478   michele knapp   A009 07-01-2022 06-30-2023 SSO+SO+PATH
+## 4 20478_mk_A010 20478   michele knapp   A010 07-01-2022 06-30-2023 SSO+SO+PATH
+## 5 20538_bh_A009 20538 benjamin horton   A009 07-01-2022 06-30-2023 SSO+SO+PATH
+## 6 20538_bh_A010 20538 benjamin horton   A010 07-01-2022 06-30-2023 SSO+SO+PATH
+## 7 20539_bh_A009 20539 benjamin horton   A009 07-01-2022 06-30-2023 SSO+SO+PATH
+## 8 20539_bh_A010 20539 benjamin horton   A010 07-01-2022 06-30-2023 SSO+SO+PATH</code></pre>
 </div>
 </div>
-<div id="a009-findings" class="section level2">
-<h2>A009 FINDINGS</h2>
+<div id="report-review" class="section level2">
+<h2>REPORT REVIEW</h2>
+<div id="a009" class="section level3">
+<h3>A009</h3>
+<div id="report-data" class="section level4">
+<h4>Report Data:</h4>
+</div>
+<div id="review-steps" class="section level4">
+<h4>Review Steps:</h4>
+<ul>
+<li>[To be included from ZenGuide Report]</li>
+</ul>
+</div>
+</div>
+<div id="a010" class="section level3">
+<h3>A010</h3>
+<div id="report-data-1" class="section level4">
+<h4>Report Data:</h4>
+<pre><code>##                                          variable value           uid
+##  1:         Total Clients with Project Entry/Exit   185 20477_mk_A010
+##  2:                   Total Clients with Services   152 20477_mk_A010
+##  3:                                Total Services   572 20477_mk_A010
+##  4:                  Total Clients with Referrals    19 20477_mk_A010
+##  5:                               Total Referrals    41 20477_mk_A010
+##  6:            Total Clients with PATH enrollment    19 20477_mk_A010
+##  7:     Total PATH enrolled Clients with Services    20 20477_mk_A010
+##  8:  Total PATH enrolled Clients without Services    -1 20477_mk_A010
+##  9:    Total PATH enrolled Clients with Referrals    14 20477_mk_A010
+## 10: Total PATH enrolled Clients without Referrals     5 20477_mk_A010</code></pre>
+</div>
+<div id="review-steps-1" class="section level4">
+<h4>Review Steps:</h4>
+<ul>
+<li>Confirm the total clients with a project entry/exit appears accurate
+for the number of clients served/contacted during the reporting period.
+<ul>
+<li>[Line 1] == [?]</li>
+</ul></li>
+</ul>
+<pre><code>## 185 == [&quot;???&quot;]</code></pre>
+<pre><code>## [1] NA</code></pre>
+<ul>
+<li>Confirm the number of clients marked as PATH enrolled appears
+accurate.
+<ul>
+<li>[Line 6] == [?]</li>
+</ul></li>
+</ul>
+<pre><code>## 19 == [&quot;???&quot;]</code></pre>
+<pre><code>## [1] NA</code></pre>
+<ul>
+<li>The total clients with PATH enrollment should equal the “total PATH
+enrolled clients with services” + “total PATH enrolled clients without
+services”.
+<ul>
+<li>[Line 6] == [Line 7] + [Line 8]</li>
+<li>If the numbers do not add up, you will want to check for
+duplicate/dual enrollments (the same client served more than once during
+the reporting period).</li>
+</ul></li>
+</ul>
+<pre><code>## 19 == 20 + -1
+## TRUE</code></pre>
+<ul>
+<li>The total clients with PATH enrollment should also equal the “total
+PATH enrolled clients with referrals” + “total PATH enrolled clients
+without referrals”.
+<ul>
+<li>[Line 6] == [Line 9] + [Line 10]</li>
+<li>If the numbers do not add up, you will want to check for
+duplicate/dual enrollments (the same client served more than once during
+the reporting period).</li>
+</ul></li>
+</ul>
+<pre><code>## 19 == 14 + 5
+## TRUE</code></pre>
+</div>
+</div>
+<div id="qa-findings" class="section level3">
+<h3>QA FINDINGS</h3>
+<p>[to be completed]</p>
 <div id="current-status" class="section level4">
 <h4>Current Status</h4>
-<pre><code>##           uid report_dl QA_comp
-## 1 477_mk_A009     FALSE   FALSE
-## 3 478_mk_A009     FALSE   FALSE
-## 5 538_bh_A009     FALSE   FALSE
-## 7 539_bh_A009     FALSE   FALSE</code></pre>
+<pre><code>##             uid report_dl QA_comp
+## 2 20477_mk_A010     FALSE   FALSE
+## 4 20478_mk_A010     FALSE   FALSE
+## 6 20538_bh_A010     FALSE   FALSE
+## 8 20539_bh_A010     FALSE   FALSE</code></pre>
 </div>
 <div id="identified-qa-issues" class="section level4">
 <h4>Identified QA Issues</h4>
 </div>
-</div>
-<div id="a010-findings" class="section level2">
-<h2>A010 FINDINGS</h2>
-<div id="current-status-1" class="section level4">
-<h4>Current Status</h4>
-<pre><code>##           uid report_dl QA_comp
-## 2 477_mk_A010     FALSE   FALSE
-## 4 478_mk_A010     FALSE   FALSE
-## 6 538_bh_A010     FALSE   FALSE
-## 8 539_bh_A010     FALSE   FALSE</code></pre>
-</div>
-<div id="summary-data" class="section level4">
-<h4>Summary Data</h4>
-<pre><code>##                                          variable value
-##  1:         Total Clients with Project Entry/Exit   185
-##  2:                   Total Clients with Services   152
-##  3:                                Total Services   572
-##  4:                  Total Clients with Referrals    19
-##  5:                               Total Referrals    41
-##  6:            Total Clients with PATH enrollment    19
-##  7:     Total PATH enrolled Clients with Services    20
-##  8:  Total PATH enrolled Clients without Services    -1
-##  9:    Total PATH enrolled Clients with Referrals    14
-## 10: Total PATH enrolled Clients without Referrals     5</code></pre>
-</div>
-<div id="identified-qa-issues-1" class="section level4">
-<h4>Identified QA Issues</h4>
 </div>
 </div>
 <div id="conclusion" class="section level2">
