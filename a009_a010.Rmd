@@ -106,6 +106,29 @@ tbl010_status <- out1[out1$report =="A010",c("uid","pid")] %>%
 print(tbl010_status)
 ```
 
+#### Summary Data
+```{r A010 Data, echo=FALSE, message=FALSE, warning=FALSE}
+library(readr)
+da010 <- read_tsv("variable	value
+Total Clients with Project Entry/Exit	185
+Total Clients with Services	152
+Total Services	572
+Total Clients with Referrals	19
+Total Referrals	41
+Total Clients with PATH enrollment	19
+Total PATH enrolled Clients with Services	20
+Total PATH enrolled Clients without Services	-1
+Total PATH enrolled Clients with Referrals	14
+Total PATH enrolled Clients without Referrals	5
+") %>% 
+  as.data.table() %>%
+  mutate(., 
+         user = "mk")
+print(da010)
+
+```
+
+
 #### Identified QA Issues
 
 
@@ -117,8 +140,11 @@ print(tbl010_status)
 # library(utils)
 # writeClipboard(str = includeHTML("a009_a010.html"))
 
-file.rename(from = "a009_a010.html", 
+if(file.exists("a009_a010.html")){
+  file.rename(from = "a009_a010.html", 
             to = "index.html")
+}
+
 
 ```
 
