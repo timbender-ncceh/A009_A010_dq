@@ -19,6 +19,32 @@ library(crayon)
 # Vars----
 user.name    <- "michele knapp"
 prov_prompt  <- "Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)"
+
+proj_summary.dash <- "Persons served during this reporting period:	Count
+8. Number of persons contacted by PATH-funded staff this reporting period	
+166
+9. Number of new persons contacted this reporting period in a PATH Street Outreach project	
+145
+10. Number of new persons contacted this reporting period in a PATH Services Only project	
+0
+11. Total number of new persons contacted this reporting period (#9 + #10 = total new clients contacted)	
+145
+12a. Instances of contact this reporting period prior to date of enrollment	
+59
+12b. Total instances of contact during this reporting period	
+100
+13a. Number of new persons contacted this reporting period who could not be enrolled because of ineligibility for PATH	
+17
+13b. Number of new persons contacted this reporting period who could not be enrolled because provider was unable to locate the client	
+17
+14. Number of new persons contacted this reporting period who became enrolled in PATH	
+17
+15. Number with active, enrolled PATH status at any point during the date range	
+18
+16. Number of active, enrolled PATH clients receiving community mental health services through any funding source at any point during the reporting period	
+14
+"
+
 proj_summary.a010 <- "Total Clients with Project Entry/Exit	185 
 Total Clients with Services	152 
 Total Services	572 
@@ -40,6 +66,18 @@ a009_tabB_colK.no_colH.noexit <- 6
 a009_tabB_colK.no_colL.missing <- 0
 
 # tidy----
+psd <- proj_summary.dash %>%
+  strsplit(., "\t|\n") %>%
+  unlist() %>%
+  .[. != ""]
+
+psd.df <- data.frame(var1 = grep("^\\d{1,}\\w{0,1}\\. ", psd, value = T), 
+                     var2 = as.numeric(psd[!psd %in% grep("^\\d{1,}\\w{0,1}\\. ", psd, value = T)][3:length(psd[!psd %in% grep("^\\d{1,}\\w{0,1}\\. ", psd, value = T)])] ))
+
+colnames(psd.df) <- psd[1:2]
+
+psd.df <- as_tibble(psd.df)
+
 proj_id   <- prov_prompt %>%
   gsub("^.*\\(|\\)$", "", .) %>% as.numeric()
 proj_name <- prov_prompt
@@ -206,6 +244,12 @@ print(out1)
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 cat(glue("Project ID:\t{proj_id}\nProv. Name:\t{proj_name}"))
 ```
+
+### PATH Dashboard Results
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+print(psd.df)
+```
+
 
 ### A009 Results
 #### Report Data:
