@@ -16,6 +16,81 @@ library(readr)
 library(glue)
 library(crayon)
 
+# Vars----
+user.name    <- "michele knapp"
+prov_prompt  <- "Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)"
+proj_summary.a010 <- "Total Clients with Project Entry/Exit	185 
+Total Clients with Services	152 
+Total Services	572 
+Total Clients with Referrals	19 
+Total Referrals	41 
+Total Clients with PATH enrollment	19 
+Total PATH enrolled Clients with Services	20 
+Total PATH enrolled Clients without Services	(1)
+Total PATH enrolled Clients with Referrals	14 
+Total PATH enrolled Clients without Referrals	5 
+"
+proj_summary.a009 <- "Entry Exit Provider Id	Unduplicated Client Count	Number of Entries	Count of Clients with DOE	Number of Exits
+Asheville Buncombe Community Christian Ministries - All BoS Regions - Services Only - SSO - PATH(20539)	122	122	15	63
+"
+
+
+# tidy----
+proj_id   <- prov_prompt %>%
+  gsub("^.*\\(|\\)$", "", .) %>% as.numeric()
+proj_name <- prov_prompt
+
+# Funs-----
+funA009 <- function(sum.data, 
+                    provider.prompt, 
+                    username){
+  require(readr)
+  temp.pp <- provider.prompt %>% trimws()
+  temp.pid <- temp.pp %>%
+    strsplit(., split = "\\(|\\)$") %>%
+    unlist() %>%
+    as.numeric() %>%
+    .[!is.na(.)]
+  temp.uid <- username %>%
+    strsplit(., " ") %>%
+    unlist() %>%
+    strsplit(., "")
+  if(length(temp.uid) == 2){
+    temp.uid <- temp.uid %>%
+      lapply(., first) %>%
+      unlist() %>%
+      tolower() %>%
+      paste(., sep = "", collapse = "")
+  
+  }else{
+    temp.uid <- temp.uid %>% 
+      unlist() %>%
+      tolower() %>%
+      paste(., sep = "", collapse = "") %>%
+      substr(., 0, 2)
+  }
+  temp.uid <- paste(temp.pid, temp.uid, "A009", sep = "_", 
+                    collapse = "_")
+    
+  
+  sum.df <- read_tsv(sum.data)
+  # sum.df$value <- gsub("\\(", "-", sum.df$value) %>%
+  #   gsub("\\)|,", "", .) %>%
+  #   as.numeric()
+  #sum.df$project_id <- temp.pid
+  #sum.df$uid <- temp.uid
+  sum.df$`Entry Exit Provider Id` <- temp.pid
+  
+  colnames(sum.df) <- c("prov_id", 
+                        "undup_clients", 
+                        "n_entries", 
+                        "n_clients_wDOE", 
+                        "n_exits")
+  
+  out.df <- sum.df %>% as.data.table()
+  return(out.df)
+}
+
 funA010 <- function(sum.data, 
                   provider.prompt, 
                   username){
@@ -54,15 +129,17 @@ funA010 <- function(sum.data,
     gsub("\\)|,", "", .) %>%
     as.numeric()
   #sum.df$project_id <- temp.pid
-  sum.df$uid <- temp.uid
+  #sum.df$uid <- temp.uid
   
   out.df <- sum.df %>% as.data.table()
   return(out.df)
 }
+
+
 ```
 
 
-## OVERVIEW
+## REPORT DIRECTIONS
 Download A009 and A010 Report with the specifications listed below.  The pull up the PATH dashboard (not a report; just a dashboard in HMIS) and compare them the A0XX reports to the dash and see where the differences are and log them.
 
 #### GitHub Links:
@@ -76,23 +153,18 @@ Download A009 and A010 Report with the specifications listed below.  The pull up
 * A010: https://ncceh.zendesk.com/hc/en-us/articles/16273061844883-A010-PATH-Services-Referrals-Report-Guide
 * PATH_Dashboard: https://ncceh.zendesk.com/hc/en-us/articles/15097522537235
 
-## PROJECT HOW-TO 
+#### Project How-To
+* From Login 
+  - Shadow user [redacted] or [redacted]
+  - Connect to BusinessObjects
+* Folder Directory 
+  - See ZenGuide
+* Query Setup
+  - See ZenGuide for filetype and output directions
+  - Click the three dot symbol (…)(⋯) not the name of the report to set it up and run it.  This allows for report configuration. 
+  - You will need to select one provider_id (see notes below) and compare to PA
 
-#### From Login 
-* Shadow user [redacted] or [redacted]
-* Connect to BusinessObjects
-
-#### Folder Directory 
-* See ZenGuide
-
-#### Query Setup
-* See ZenGuide for filetype and output directions
-* Click the three dot symbol (…)(⋯) not the name of the report to set it up and run it.  This allows for report configuration. 
-* You will need to select one provider_id (see notes below) and compare to PA
-
-<!-- #### QA Steps, Tabled  -->
-
-```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=TRUE}
 tbl1 <- expand.grid(report = c("A009", "A010"), 
             #comparison = "PATH_dash",
             start_date = "07-01-2022",
@@ -125,29 +197,31 @@ print(out1)
 
 ```
 
-## REPORT REVIEW
-### A009
+## QA INPUTS AND RESULTS
+### Provider Inputs:
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+cat(glue("Project ID:\t{proj_id}\nProv. Name:\t{proj_name}"))
+```
+
+### A009 Results
 #### Report Data:
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+da009 <- funA009(proj_summary.a009, 
+                 prov_prompt, 
+                 user.name)
+print(da009)
+```
+
 #### Review Steps:
   * [To be included from ZenGuide Report]
   
-### A010
+### A010 Results
 #### Report Data:
 ```{r A010 Data, echo=FALSE, message=FALSE, warning=FALSE}
 
-da010 <- funA010(sum.data = "Total Clients with Project Entry/Exit	185 
-Total Clients with Services	152 
-Total Services	572 
-Total Clients with Referrals	19 
-Total Referrals	41 
-Total Clients with PATH enrollment	19 
-Total PATH enrolled Clients with Services	20 
-Total PATH enrolled Clients without Services	(1)
-Total PATH enrolled Clients with Referrals	14 
-Total PATH enrolled Clients without Referrals	5 
-", 
-                 provider.prompt = "Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)", 
-                 username = "michele knapp")
+da010 <- funA010(sum.data = proj_summary.a010, 
+                 provider.prompt = prov_prompt, 
+                 username = user.name)
 print(da010)
 
 ```
@@ -155,17 +229,15 @@ print(da010)
 
 #### Review Steps:
 * Confirm the total clients with a project entry/exit appears accurate for the number of clients served/contacted during the reporting period.  
-  - [Line 1] == [?]
+  - [Line 1] == [Line 2] + [Line 4] + [Line 6]
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-cat(glue("{da010$value[1]} == [\"???\"]"))
-da010$value[1] == NA
+cat(glue("{da010$value[1]} == {da010$value[2]} + {da010$value[4]} + {da010$value[6]}\n{da010$value[1] == da010$value[2] + da010$value[4] + da010$value[6]}"))
 ```
   
 * Confirm the number of clients marked as PATH enrolled appears accurate.  
-  - [Line 6] == [?]
+  - [Line 6] == [Line 7] + [Line 8] & [Line 6] == [Line 9] + [Line 10]
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-cat(glue("{da010$value[6]} == [\"???\"]"))
-da010$value[6] == NA
+cat(glue("{da010$value[6]} == {da010$value[7]} + {da010$value[8]} & {da010$value[6]} == {da010$value[9]} + {da010$value[10]}\n{da010$value[6] == da010$value[7] + da010$value[8] & da010$value[6] == da010$value[9] + da010$value[10]}"))
 ```  
 * The total clients with PATH enrollment should equal the "total PATH enrolled clients with services" + "total PATH enrolled clients without services".  
   - [Line 6] == [Line 7] + [Line 8]

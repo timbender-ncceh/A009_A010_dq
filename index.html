@@ -351,13 +351,13 @@ display: none;
 
 <h1 class="title toc-ignore">A009 and A010 DQ Checks</h1>
 <h4 class="author">NCCES_tim_bender</h4>
-<h4 class="date">2023-07-20 10:20:55</h4>
+<h4 class="date">2023-07-20 13:57:03</h4>
 
 </div>
 
 
-<div id="overview" class="section level2">
-<h2>OVERVIEW</h2>
+<div id="report-directions" class="section level2">
+<h2>REPORT DIRECTIONS</h2>
 <p>Download A009 and A010 Report with the specifications listed below.
 The pull up the PATH dashboard (not a report; just a dashboard in HMIS)
 and compare them the A0XX reports to the dash and see where the
@@ -379,49 +379,42 @@ differences are and log them.</p>
 <li>PATH_Dashboard: <a href="https://ncceh.zendesk.com/hc/en-us/articles/15097522537235" class="uri">https://ncceh.zendesk.com/hc/en-us/articles/15097522537235</a></li>
 </ul>
 </div>
-</div>
-<div id="project-how-to" class="section level2">
-<h2>PROJECT HOW-TO</h2>
-<div id="from-login" class="section level4">
-<h4>From Login</h4>
+<div id="project-how-to" class="section level4">
+<h4>Project How-To</h4>
+<ul>
+<li>From Login
 <ul>
 <li>Shadow user [redacted] or [redacted]</li>
 <li>Connect to BusinessObjects</li>
-</ul>
-</div>
-<div id="folder-directory" class="section level4">
-<h4>Folder Directory</h4>
+</ul></li>
+<li>Folder Directory
 <ul>
 <li>See ZenGuide</li>
-</ul>
-</div>
-<div id="query-setup" class="section level4">
-<h4>Query Setup</h4>
+</ul></li>
+<li>Query Setup
 <ul>
 <li>See ZenGuide for filetype and output directions</li>
 <li>Click the three dot symbol (…)(⋯) not the name of the report to set
 it up and run it. This allows for report configuration.</li>
 <li>You will need to select one provider_id (see notes below) and
 compare to PA</li>
+</ul></li>
 </ul>
-<!-- #### QA Steps, Tabled  -->
-<pre><code>##             uid   pid     shadow_user report start_date   end_date       notes
-## 1 20477_mk_A009 20477   michele knapp   A009 07-01-2022 06-30-2023 SSO+SO+PATH
-## 2 20477_mk_A010 20477   michele knapp   A010 07-01-2022 06-30-2023 SSO+SO+PATH
-## 3 20478_mk_A009 20478   michele knapp   A009 07-01-2022 06-30-2023 SSO+SO+PATH
-## 4 20478_mk_A010 20478   michele knapp   A010 07-01-2022 06-30-2023 SSO+SO+PATH
-## 5 20538_bh_A009 20538 benjamin horton   A009 07-01-2022 06-30-2023 SSO+SO+PATH
-## 6 20538_bh_A010 20538 benjamin horton   A010 07-01-2022 06-30-2023 SSO+SO+PATH
-## 7 20539_bh_A009 20539 benjamin horton   A009 07-01-2022 06-30-2023 SSO+SO+PATH
-## 8 20539_bh_A010 20539 benjamin horton   A010 07-01-2022 06-30-2023 SSO+SO+PATH</code></pre>
 </div>
 </div>
-<div id="report-review" class="section level2">
-<h2>REPORT REVIEW</h2>
-<div id="a009" class="section level3">
-<h3>A009</h3>
+<div id="qa-inputs-and-results" class="section level2">
+<h2>QA INPUTS AND RESULTS</h2>
+<div id="provider-inputs" class="section level3">
+<h3>Provider Inputs:</h3>
+<pre><code>## Project ID:  20477
+## Prov. Name:  Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)</code></pre>
+</div>
+<div id="a009-results" class="section level3">
+<h3>A009 Results</h3>
 <div id="report-data" class="section level4">
 <h4>Report Data:</h4>
+<pre><code>##    prov_id undup_clients n_entries n_clients_wDOE n_exits
+## 1:   20477           122       122             15      63</code></pre>
 </div>
 <div id="review-steps" class="section level4">
 <h4>Review Steps:</h4>
@@ -430,21 +423,21 @@ compare to PA</li>
 </ul>
 </div>
 </div>
-<div id="a010" class="section level3">
-<h3>A010</h3>
+<div id="a010-results" class="section level3">
+<h3>A010 Results</h3>
 <div id="report-data-1" class="section level4">
 <h4>Report Data:</h4>
-<pre><code>##                                          variable value           uid
-##  1:         Total Clients with Project Entry/Exit   185 20477_mk_A010
-##  2:                   Total Clients with Services   152 20477_mk_A010
-##  3:                                Total Services   572 20477_mk_A010
-##  4:                  Total Clients with Referrals    19 20477_mk_A010
-##  5:                               Total Referrals    41 20477_mk_A010
-##  6:            Total Clients with PATH enrollment    19 20477_mk_A010
-##  7:     Total PATH enrolled Clients with Services    20 20477_mk_A010
-##  8:  Total PATH enrolled Clients without Services    -1 20477_mk_A010
-##  9:    Total PATH enrolled Clients with Referrals    14 20477_mk_A010
-## 10: Total PATH enrolled Clients without Referrals     5 20477_mk_A010</code></pre>
+<pre><code>##                                          variable value
+##  1:         Total Clients with Project Entry/Exit   185
+##  2:                   Total Clients with Services   152
+##  3:                                Total Services   572
+##  4:                  Total Clients with Referrals    19
+##  5:                               Total Referrals    41
+##  6:            Total Clients with PATH enrollment    19
+##  7:     Total PATH enrolled Clients with Services    20
+##  8:  Total PATH enrolled Clients without Services    -1
+##  9:    Total PATH enrolled Clients with Referrals    14
+## 10: Total PATH enrolled Clients without Referrals     5</code></pre>
 </div>
 <div id="review-steps-1" class="section level4">
 <h4>Review Steps:</h4>
@@ -452,20 +445,21 @@ compare to PA</li>
 <li>Confirm the total clients with a project entry/exit appears accurate
 for the number of clients served/contacted during the reporting period.
 <ul>
-<li>[Line 1] == [?]</li>
+<li>[Line 1] == [Line 2] + [Line 4] + [Line 6]</li>
 </ul></li>
 </ul>
-<pre><code>## 185 == [&quot;???&quot;]</code></pre>
-<pre><code>## [1] NA</code></pre>
+<pre><code>## 185 == 152 + 19 + 19
+## FALSE</code></pre>
 <ul>
 <li>Confirm the number of clients marked as PATH enrolled appears
 accurate.
 <ul>
-<li>[Line 6] == [?]</li>
+<li>[Line 6] == [Line 7] + [Line 8] &amp; [Line 6] == [Line 9] + [Line
+10]</li>
 </ul></li>
 </ul>
-<pre><code>## 19 == [&quot;???&quot;]</code></pre>
-<pre><code>## [1] NA</code></pre>
+<pre><code>## 19 == 20 + -1 &amp; 19 == 14 + 5
+## TRUE</code></pre>
 <ul>
 <li>The total clients with PATH enrollment should equal the “total PATH
 enrolled clients with services” + “total PATH enrolled clients without
