@@ -252,6 +252,13 @@ cat(glue("Project ID:\t{proj_id}\nProv. Name:\t{proj_name}"))
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 print(psd.df)
 ```
+#### Client Data: 
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# input
+
+# output
+print("not necessary here - will be joined below")
+```
 
 
 ### A009 Results
@@ -261,6 +268,259 @@ da009 <- funA009(proj_summary.a009,
                  prov_prompt, 
                  user.name)
 print(da009)
+```
+#### Client Data: 
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# input
+client.a009 <- read_tsv("Client Uid	Entry Exit Group UID	Entry Exit Provider Id	Entry Date	Exit Date	Length of Time (active clients)	Date of Engagement	Date of Status Determination(4332)	Client Became Enrolled in PATH Program(4333)	If no, reason not enrolled(4334)	Connection with SOAR (PATH Only)(4335)
+146438	1200046	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/29/2023		21	\"no DOE recorded
+\"				No (HUD)
+151029	1194189	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/26/2023		85	06/12/2014				No (HUD)
+201239	1200048	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/29/2023		21	\"no DOE recorded
+\"				No (HUD)
+274724	1190692	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	03/21/2023	PATH ineligible. Needs Exit	121	03/21/2023	03/21/2023	No	Client was found ineligible for PATH	No (HUD)
+310859	1188468	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	02/23/2023		147	\"Enrolled longer than 90days
+Missing DOE\"	Review Needed	Review Needed		MISSING
+321958	1195109	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/05/2023		76	\"no DOE recorded
+\"				No (HUD)
+416722	1195160	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/05/2023		76	\"no DOE recorded
+\"				MISSING
+423512	1195564	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/11/2023		70	05/11/2023	05/15/2023	Yes		Yes (HUD)
+425143	1200026	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/15/2023	PATH ineligible. Needs Exit	35	02/24/2023	02/24/2023	No	Client was not enrolled for other reason(s)	No (HUD)
+429076	1194117	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/26/2023		85	05/28/2021				MISSING
+493521	1199746	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/09/2023		41	\"no DOE recorded
+\"				MISSING
+495357	1197370	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/05/2023	PATH ineligible. Needs Exit	45	08/29/2022	06/05/2023	No	Client was found ineligible for PATH	No (HUD)
+1005466	1192491	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/07/2023		104	04/07/2023	Review Needed	Review Needed		MISSING
+1006534	1177884	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/14/2022		248	11/14/2022	Review Needed	Review Needed		MISSING
+1006583	1176859	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/07/2022		255	11/05/2022	11/07/2023			MISSING
+1018337	1193718	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	01/25/2023		176	01/30/2023	01/31/2023	Yes		Yes (HUD)
+1022522	1171909	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	PATH ineligible. Needs Exit	414	06/01/2022	05/05/2023	No	Client was found ineligible for PATH	No (HUD)
+1024113	1193720	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/21/2022		241	02/22/2023	02/22/2023	Yes		Yes (HUD)
+1025027	1196004	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/15/2023		66	\"no DOE recorded
+\"				MISSING
+1025426	1195724	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/12/2023		69	10/25/2021				MISSING
+1027141	1187561	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	01/27/2023		174	02/13/2023	03/10/2023	Yes		No (HUD)
+1033061	1188473	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	02/23/2023		147	08/03/2022	Review Needed	Review Needed		MISSING
+1033586	1193489	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/20/2023		91	\"Enrolled longer than 90days
+Missing DOE\"	Review Needed	Review Needed		MISSING
+1034964	1192274	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/05/2023		106	09/26/2022	Review Needed	Review Needed		No (HUD)
+1035506	1193994	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/24/2023		87	04/24/2023	05/08/2023	Yes		No (HUD)
+1038950	1185026	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	01/24/2023		177	01/24/2023	Review Needed	Review Needed		MISSING
+1039581	1186671	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	02/07/2023		163	02/07/2023	03/01/2023	Yes		Yes (HUD)
+1039637	1194352	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	02/07/2023		163	02/07/2023	03/22/2023	Yes		Yes (HUD)
+1040348	1192277	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/06/2023	PATH ineligible. Needs Exit	105	\"Enrolled longer than 90days
+Missing DOE\"	Review Needed	Review Needed	Client was found ineligible for PATH	No (HUD)
+1041182	1191945	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/03/2023	PATH ineligible. Needs Exit	108	05/03/2023	05/03/2023	No	Client was found ineligible for PATH	No (HUD)
+1041245	1192214	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/04/2023	PATH ineligible. Needs Exit	107	04/04/2023	04/04/2023	No	Client was found ineligible for PATH	No (HUD)
+1041403	1192763	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/11/2023		100	\"Enrolled longer than 90days
+Missing DOE\"	Review Needed	Review Needed		MISSING
+1041433	1195173	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/05/2023		76	\"no DOE recorded
+\"				MISSING
+1041812	1194124	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/26/2023		85	\"no DOE recorded
+\"				MISSING
+1041834	1194183	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/26/2023		85	\"no DOE recorded
+\"				No (HUD)
+1042116	1196449	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/19/2023		62	05/19/2023				No (HUD)
+1042129	1198793	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/19/2023		31	06/19/2023				No (HUD)
+1042208	1197137	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/31/2023		50	05/31/2023				MISSING
+1042470	1196557	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/22/2023		59	\"no DOE recorded
+\"				MISSING
+1042471	1196562	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/22/2023		59	\"no DOE recorded
+\"				MISSING
+1042738	1197220	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/23/2023		58	\"no DOE recorded
+\"				MISSING
+1042918	1197941	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/08/2023		42	\"no DOE recorded
+\"				MISSING
+1043206	1200008	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/11/2023		39	\"no DOE recorded
+\"				No (HUD)
+1043548	1200011	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/11/2023		39	\"no DOE recorded
+\"				No (HUD)
+1043549	1200012	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/15/2023		35	\"no DOE recorded
+\"				No (HUD)
+1043556	1200024	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/15/2023		35	\"no DOE recorded
+\"				No (HUD)
+158471	1172734	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/26/2022	07/11/2023	Exited Client	08/26/2022	02/27/2023	Yes		Yes (HUD)
+292196	1194178	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/26/2023	07/11/2023	Exited Client	07/02/2012	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+370219	1195014	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/05/2023	07/11/2023	Exited Client	03/10/2016	03/10/2016	Yes		MISSING
+433524	1188481	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	02/24/2023	07/11/2023	Exited Client	11/03/2023	02/24/2023	Yes		No (HUD)
+441398	1192276	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/06/2023	07/11/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		No (HUD)
+1001151	1193584	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/19/2023	07/11/2023	Exited Client	04/19/2023	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1031851	1192680	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/11/2023	07/11/2023	Exited Client	05/19/2023	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		No (HUD)
+1034449	1192345	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	03/22/2023	07/11/2023	Exited Client	03/10/2023	03/10/2023	No		No (HUD)
+1037663	1187044	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	02/01/2023	07/11/2023	Exited Client	02/01/2023	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		No (HUD)
+1038184	1192447	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/08/2023	07/11/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1038325	1192490	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/07/2023	07/11/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1039444	1190774	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	03/22/2023	07/11/2023	Exited Client	03/22/2023	03/22/2023	Yes		MISSING
+1041256	1193618	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/10/2023	07/11/2023	Exited Client	04/05/2023	04/10/2023	Yes		Data not collected (HUD)
+1041366	1192679	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/11/2023	07/11/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1041575	1194122	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/26/2023	07/11/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1041811	1194120	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/26/2023	07/11/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1042288	1196006	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/15/2023	07/11/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1042417	1196353	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/18/2023	07/11/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1043563	1200039	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/25/2023	07/11/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1041863	1194325	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/26/2023	07/10/2023	Exited Client	04/26/2023	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1036645	1197867	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/08/2023	06/22/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+139583	1192346	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/03/2023	06/15/2023	Exited Client	04/03/2023	04/11/2023	Yes		No (HUD)
+396787	1198580	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/12/2023	06/13/2023	Exited Client	06/12/2023	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		No (HUD)
+1038586	1192445	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/08/2023	06/07/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	No	Unable to locate client	No (HUD)
+1040348	1194793	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/03/2023	06/07/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	No	Client was found ineligible for PATH	No (HUD)
+1041353	1193491	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/20/2023	06/07/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	No	Unable to locate client	No (HUD)
+1041728	1195987	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/11/2023	06/07/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	No	Client was found ineligible for PATH	No (HUD)
+1040068	1188179	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	02/20/2023	05/22/2023	Exited Client	02/20/2023	05/22/2023	No	Unable to locate client	No (HUD)
+1038977	1185127	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	01/24/2023	05/22/2023	Exited Client	01/24/2023	05/22/2023	No	Unable to locate client	No (HUD)
+1039900	1187639	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	02/13/2023	05/11/2023	Exited Client	02/13/2023	05/11/2023	No	Unable to locate client	No (HUD)
+1033835	1179312	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	12/01/2022	05/09/2023	Exited Client	07/29/2022	09/27/2022	No	Client was not enrolled for other reason(s)	No (HUD)
+1030226	1192349	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/06/2023	05/09/2023	Exited Client	08/08/2022	04/06/2023	No	Client was found ineligible for PATH	No (HUD)
+1006694	1191782	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	03/31/2023	05/09/2023	Exited Client	03/31/2023	03/31/2023	No	Client was found ineligible for PATH	No (HUD)
+474876	1162071	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/15/2022	05/09/2023	Exited Client	06/15/2022	06/15/2022	No	Client was not enrolled for other reason(s)	Client doesn't know (HUD)
+470925	1192360	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	04/06/2023	05/09/2023	Exited Client	04/06/2023	04/06/2023	No	Client was found ineligible for PATH	No (HUD)
+262283	1194752	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	05/03/2023	05/09/2023	Exited Client	09/15/2022	04/25/2023	No	Client was not enrolled for other reason(s)	No (HUD)
+423512	1154252	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	05/09/2023	Exited Client	11/09/2022	05/09/2023	No	Client was not enrolled for other reason(s)	No (HUD)
+359902	1190686	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	03/21/2023	05/09/2023	Exited Client	03/21/2023	03/21/2023	No	Client was found ineligible for PATH	No (HUD)
+197800	1171908	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	05/09/2023	Exited Client	02/03/2023	02/08/2023	Yes		Yes (HUD)
+1021495	1183748	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	09/12/2022	05/09/2023	Exited Client	06/30/2021	05/09/2023	No	Client was found ineligible for PATH	No (HUD)
+391349	1180879	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	12/16/2022	05/09/2023	Exited Client	01/25/2023	05/09/2023	No	Client was found ineligible for PATH	No (HUD)
+425143	1188486	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	02/24/2023	05/09/2023	Exited Client	02/24/2023	02/24/2023	No	Client was not enrolled for other reason(s)	No (HUD)
+1035561	1172727	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/22/2022	05/09/2023	Exited Client	08/22/2022	05/09/2023	No	Client was found ineligible for PATH	No (HUD)
+1028609	1178260	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/21/2022	05/09/2023	Exited Client	11/21/2022	05/09/2023	No	Client was not enrolled for other reason(s)	No (HUD)
+467741	1174091	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	09/13/2022	05/09/2023	Exited Client	09/13/2022	05/09/2023	No	Unable to locate client	No (HUD)
+1006082	1174038	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/18/2022	05/05/2023	Exited Client	08/18/2022	05/05/2023	No	Client was found ineligible for PATH	Yes (HUD)
+78984	1171934	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	04/25/2023	Exited Client	06/01/2022	04/25/2023	No	Client was not enrolled for other reason(s)	No (HUD)
+262283	1174198	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/10/2022	04/25/2023	Exited Client	09/15/2022	04/25/2023	No	Client was not enrolled for other reason(s)	No (HUD)
+282047	1162178	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/20/2022	04/25/2023	Exited Client	06/20/2022	04/25/2023	No	Unable to locate client	Data not collected (HUD)
+389641	1189736	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	03/09/2023	04/25/2023	Exited Client	03/09/2023	03/09/2023	No	Client was not enrolled for other reason(s)	No (HUD)
+1040366	1193717	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	03/03/2023	04/25/2023	Exited Client	03/03/2023	03/21/2023	No	Client was not enrolled for other reason(s)	No (HUD)
+365351	1171840	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	04/20/2023	Exited Client	06/01/2022	06/01/2022	No	Client was not enrolled for other reason(s)	No (HUD)
+1040519	1189713	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	03/09/2023	04/13/2023	Exited Client	03/09/2023	03/09/2023	Yes		MISSING
+1035043	1185020	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	01/16/2023	04/06/2023	Exited Client	01/16/2023	04/06/2023	No	Unable to locate client	Data not collected (HUD)
+1040657	1191026	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	03/24/2023	04/03/2023	Exited Client	03/24/2023	03/24/2023	No	Client was not enrolled for other reason(s)	MISSING
+1038588	1187017	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	02/03/2023	03/31/2023	Exited Client	01/14/2023	03/31/2023	No	Unable to locate client	No (HUD)
+151030	1190700	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	03/21/2023	03/22/2023	Exited Client	03/21/2023	03/21/2023	No	Client was not enrolled for other reason(s)	No (HUD)
+1039925	1187690	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	02/15/2023	03/22/2023	Exited Client	02/15/2023	03/03/2023	Yes		No (HUD)
+1036793	1185126	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	01/27/2023	03/21/2023	Exited Client	01/24/2023	01/24/2023	No	Unable to locate client	No (HUD)
+493521	1188916	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	03/01/2023	03/02/2023	Exited Client	03/01/2023	03/02/2023	No	Unable to locate client	Data not collected (HUD)
+476143	1167498	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/04/2022	02/27/2023	Exited Client	08/04/2022	02/27/2023	Yes		Yes (HUD)
+1012069	1188540	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	02/21/2023	02/27/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1040551	1188184	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	02/16/2023	02/22/2023	Exited Client	02/21/2023	02/22/2023	No	Client was not enrolled for other reason(s)	No (HUD)
+490805	1178035	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	07/11/2022	02/10/2023	Exited Client	07/11/2022	02/10/2023	No	Client was found ineligible for PATH	No (HUD)
+510657	1185125	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	01/27/2023	02/01/2023	Exited Client	01/27/2023	02/01/2023	Yes		No (HUD)
+1021801	1171922	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	01/31/2023	Exited Client	06/01/2022	01/31/2023	No	Client was found ineligible for PATH	No (HUD)
+1030479	1172759	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/24/2022	01/27/2023	Exited Client	08/24/2022	01/25/2023	No	Unable to locate client	No (HUD)
+329271	1171884	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	01/26/2023	Exited Client	06/01/2022	12/22/2022	No	Unable to locate client	No (HUD)
+1032853	1185016	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	01/18/2023	01/26/2023	Exited Client	01/18/2023	01/26/2023	No	Unable to locate client	Data not collected (HUD)
+1032959	1174040	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/15/2022	01/26/2023	Exited Client	08/15/2022	01/26/2023	No	Unable to locate client	Data not collected (HUD)
+1033014	1175197	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/19/2022	01/26/2023	Exited Client	01/25/2023	01/26/2023	No	Unable to locate client	Data not collected (HUD)
+1036555	1176067	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/27/2022	01/26/2023	Exited Client	10/27/2022	10/27/2022	No	Unable to locate client	Data not collected (HUD)
+1037034	1182673	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	12/27/2022	01/26/2023	Exited Client	12/27/2022	12/27/2022	No	Unable to locate client	Data not collected (HUD)
+1037216	1178511	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/03/2022	01/26/2023	Exited Client	11/03/2022	11/03/2022	No	Unable to locate client	Data not collected (HUD)
+1028139	1171912	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	01/25/2023	Exited Client	06/01/2022	01/25/2023	No	Unable to locate client	No (HUD)
+404837	1175553	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/24/2022	01/25/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+356394	1182661	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	01/05/2023	01/25/2023	Exited Client	01/06/2023	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+484376	1173443	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	09/13/2022	01/25/2023	Exited Client	09/13/2022	01/25/2023	No	Client was found ineligible for PATH	No (HUD)
+270112	1163061	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/29/2022	01/25/2023	Exited Client	06/29/2022	01/25/2023	No	Unable to locate client	Data not collected (HUD)
+480954	1182674	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	12/20/2022	01/25/2023	Exited Client	12/20/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+211467	1173473	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	09/16/2022	01/24/2023	Exited Client	09/16/2022	01/24/2023	No	Client was not enrolled for other reason(s)	No (HUD)
+219191	1171903	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	01/24/2023	Exited Client	06/01/2022	01/24/2023	No	Client was found ineligible for PATH	No (HUD)
+249741	1176532	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/04/2022	01/24/2023	Exited Client	11/04/2022	01/24/2023	No	Client was not enrolled for other reason(s)	No (HUD)
+411676	1178277	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/16/2022	01/24/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+419021	1178008	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/24/2022	01/24/2023	Exited Client	10/24/2022	11/10/2022	Yes		MISSING
+457423	1174647	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	09/09/2022	01/24/2023	Exited Client	09/09/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+462649	1167487	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/10/2022	01/24/2023	Exited Client	08/10/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+480879	1175630	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/24/2022	01/24/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+495357	1174073	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/29/2022	01/24/2023	Exited Client	08/29/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+507954	1179782	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	12/07/2022	01/24/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1000165	1162192	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/13/2022	01/24/2023	Exited Client	06/13/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1000167	1162189	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/13/2022	01/24/2023	Exited Client	06/13/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		No (HUD)
+1014949	1175187	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/21/2022	01/24/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1015579	1174241	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	09/01/2022	01/24/2023	Exited Client	09/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1024496	1167284	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	07/27/2022	01/24/2023	Exited Client	07/27/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1024799	1174249	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	09/09/2022	01/24/2023	Exited Client	09/09/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1027870	1178518	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/19/2022	01/24/2023	Exited Client	08/19/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1029971	1175001	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/19/2022	01/24/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1030226	1167667	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/08/2022	01/24/2023	Exited Client	08/08/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1031045	1167597	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/01/2022	01/24/2023	Exited Client	08/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1032025	1167286	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/08/2022	01/24/2023	Exited Client	08/08/2022	08/08/2022	No	Client was not enrolled for other reason(s)	No (HUD)
+1032271	1174216	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/17/2022	01/24/2023	Exited Client	08/17/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1032568	1166341	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	07/29/2022	01/24/2023	Exited Client	07/29/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1034964	1172717	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	09/26/2022	01/24/2023	Exited Client	09/26/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1035555	1172706	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	09/02/2022	01/24/2023	Exited Client	09/02/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1036980	1177895	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/31/2022	01/24/2023	Exited Client	10/31/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1036984	1180521	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	12/14/2022	01/24/2023	Exited Client	12/15/2022	12/15/2022	No	Unable to locate client	MISSING
+1037049	1177858	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/14/2022	01/24/2023	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1037066	1177894	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/08/2022	01/24/2023	Exited Client	11/08/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1038261	1182846	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	01/04/2023	01/24/2023	Exited Client	01/04/2023	01/06/2023	No	Client was found ineligible for PATH	No (HUD)
+419021	1178128	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/24/2022	01/09/2023	Exited Client	10/24/2022	11/10/2022	Yes		MISSING
+435635	1171957	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	12/31/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+281571	1171910	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	12/29/2022	Exited Client	06/01/2022	12/29/2022	No	Client was found ineligible for PATH	No (HUD)
+397056	1171894	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	12/28/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+509097	1171956	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	12/28/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1023474	1171847	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	12/28/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1020790	1171923	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	12/14/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1029632	1171863	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	12/13/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+355458	1171837	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	12/13/2022	Exited Client	06/01/2022	06/01/2022	No	Client was not enrolled for other reason(s)	No (HUD)
+1018337	1171854	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	12/13/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1024242	1174248	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	09/07/2022	12/13/2022	Exited Client	09/07/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+433524	1178514	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/03/2022	11/16/2022	Exited Client	11/03/2022	11/03/2022	REQUIRED FOR EXITED CLIENTS		MISSING
+1034448	1177859	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/11/2022	11/13/2022	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1036282	1176033	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/31/2022	11/10/2022	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1019637	1174056	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	09/23/2022	11/09/2022	Exited Client	\"no DOE recorded
+\"	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+212556	1172060	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	10/21/2022	Exited Client	06/01/2022	10/21/2022	No	Client was not enrolled for other reason(s)	No (HUD)
+132067	1165417	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	07/06/2022	10/12/2022	Exited Client	07/06/2022	07/06/2022	No	Client was not enrolled for other reason(s)	No (HUD)
+208115	1171919	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	10/12/2022	Exited Client	06/01/2022	10/12/2022	No	Client was not enrolled for other reason(s)	No (HUD)
+432441	1161926	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/10/2022	10/12/2022	Exited Client	06/10/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1004176	1162256	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/15/2022	10/12/2022	Exited Client	06/15/2022	06/15/2022	No	Client was not enrolled for other reason(s)	Data not collected (HUD)
+1026332	1171913	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	10/12/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1032285	1162174	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/17/2022	09/27/2022	Exited Client	06/17/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		No (HUD)
+1025876	1165402	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	07/15/2022	09/27/2022	Exited Client	07/15/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1007514	1171890	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	09/27/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1033835	1167369	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	07/29/2022	09/27/2022	Exited Client	07/29/2022	09/27/2022	No	Client was not enrolled for other reason(s)	MISSING
+461208	1171861	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	09/27/2022	Exited Client	06/01/2022	09/27/2022	No	Unable to locate client	MISSING
+1029762	1164810	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	07/15/2022	09/27/2022	Exited Client	07/15/2022	07/15/2022	No	Client was not enrolled for other reason(s)	MISSING
+1033061	1167533	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/03/2022	09/27/2022	Exited Client	08/03/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1032585	1167656	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	08/01/2022	09/12/2022	Exited Client	08/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1024113	1177319	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	07/15/2022	09/08/2022	Exited Client	09/10/2021	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1029155	1151643	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	08/16/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+163758	1144460	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	08/16/2022	Exited Client	06/01/2022	08/16/2022	No	Client was not enrolled for other reason(s)	No (HUD)
+1028519	1171936	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	08/16/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+505501	1127393	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	08/15/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1028137	1171897	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	08/15/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+389629	1171838	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	08/12/2022	Exited Client	06/01/2022	06/01/2022	No	Client was not enrolled for other reason(s)	No (HUD)
+392786	1171883	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	08/12/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1029749	1156914	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	08/11/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1031429	1171904	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	08/11/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+249840	1144448	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	08/10/2022	Exited Client	06/01/2022	08/10/2022	No	Client was found ineligible for PATH	No (HUD)
+1025923	1139708	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	08/10/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+1025925	1172051	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	08/10/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+381963	1166180	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	07/25/2022	08/02/2022	Exited Client	07/25/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
+")
+# output
+print("client data tbd")
 ```
 
 <!-- #### Review Steps: -->
@@ -311,6 +571,227 @@ da010 <- funA010(sum.data = proj_summary.a010,
                  username = user.name)
 print(da010)
 
+```
+#### Client Data: 
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# input
+client.a010 <- read_tsv("Client Uid	Entry Exit Provider Id	Entry Date	Exit Date	Date of Status Determination(4332)	Client Became Enrolled in PATH Program(4333)	PATH Services & Referrals required
+78984	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	4/25/2023	4/25/2023	No	
+132067	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	7/6/2022	10/12/2022	7/6/2022	No	
+139583	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/3/2023	6/15/2023	4/11/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+146438	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/29/2023				
+151029	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/26/2023				
+151030	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	3/21/2023	3/22/2023	3/21/2023	No	
+158471	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/26/2022	7/11/2023	2/27/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+163758	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	8/16/2022	8/16/2022	No	
+197800	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	5/9/2023	2/8/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+201239	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/29/2023				
+208115	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	10/12/2022	10/12/2022	No	
+211467	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	9/16/2022	1/24/2023	1/24/2023	No	
+212556	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	10/21/2022	10/21/2022	No	
+219191	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	1/24/2023	1/24/2023	No	
+249741	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/4/2022	1/24/2023	1/24/2023	No	
+249840	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	8/10/2022	8/10/2022	No	
+262283	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/10/2022	4/25/2023	4/25/2023	No	
+262283	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/3/2023	5/9/2023	4/25/2023	No	
+270112	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/29/2022	1/25/2023	1/25/2023	No	
+274724	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	3/21/2023	Determined not PATH enrolled. Exit required	3/21/2023	No	
+281571	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	12/29/2022	12/29/2022	No	
+282047	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/20/2022	4/25/2023	4/25/2023	No	
+292196	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/26/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
+310859	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	2/23/2023		\"Review Needed.
+No PATH determination in
+more than 90 days.\"		
+321958	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/5/2023				
+329271	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	1/26/2023	12/22/2022	No	
+355458	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	12/13/2022	6/1/2022	No	
+356394	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	1/5/2023	1/25/2023	Missing All Determination Details	Missing All Determination Details	
+359902	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	3/21/2023	5/9/2023	3/21/2023	No	
+365351	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	4/20/2023	6/1/2022	No	
+370219	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/5/2023	7/11/2023	3/10/2016	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+381963	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	7/25/2022	8/2/2022	Missing All Determination Details	Missing All Determination Details	
+389629	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	8/12/2022	6/1/2022	No	
+389641	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	3/9/2023	4/25/2023	3/9/2023	No	
+391349	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	12/16/2022	5/9/2023	5/9/2023	No	
+392786	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	8/12/2022	Missing All Determination Details	Missing All Determination Details	
+396787	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/12/2023	6/13/2023	Missing All Determination Details	Missing All Determination Details	
+397056	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	12/28/2022	Missing All Determination Details	Missing All Determination Details	
+404837	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/24/2022	1/25/2023	Missing All Determination Details	Missing All Determination Details	
+411676	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/16/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+416722	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/5/2023				
+419021	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/24/2022	1/9/2023	11/10/2022	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+419021	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/24/2022	1/24/2023	11/10/2022	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+423512	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	5/9/2023	5/9/2023	No	
+423512	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/11/2023		5/15/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+425143	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	2/24/2023	5/9/2023	2/24/2023	No	
+425143	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/15/2023	Determined not PATH enrolled. Exit required	2/24/2023	No	
+429076	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/26/2023				
+432441	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/10/2022	10/12/2022	Missing All Determination Details	Missing All Determination Details	
+433524	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/3/2022	11/16/2022	11/3/2022	Missing	
+433524	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	2/24/2023	7/11/2023	2/24/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+435635	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	12/31/2022	Missing All Determination Details	Missing All Determination Details	
+441398	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/6/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
+457423	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	9/9/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+461208	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	9/27/2022	9/27/2022	No	
+462649	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/10/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+467741	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	9/13/2022	5/9/2023	5/9/2023	No	
+470925	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/6/2023	5/9/2023	4/6/2023	No	
+474876	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/15/2022	5/9/2023	6/15/2022	No	
+476143	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/4/2022	2/27/2023	2/27/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+480879	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/24/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+480954	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	12/20/2022	1/25/2023	Missing All Determination Details	Missing All Determination Details	
+484376	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	9/13/2022	1/25/2023	1/25/2023	No	
+490805	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	7/11/2022	2/10/2023	2/10/2023	No	
+493521	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	3/1/2023	3/2/2023	3/2/2023	No	
+493521	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/9/2023				
+495357	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/29/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+495357	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/5/2023	Determined not PATH enrolled. Exit required	6/5/2023	No	
+505501	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	8/15/2022	Missing All Determination Details	Missing All Determination Details	
+507954	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	12/7/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+509097	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	12/28/2022	Missing All Determination Details	Missing All Determination Details	
+510657	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	1/27/2023	2/1/2023	2/1/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+1000165	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/13/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1000167	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/13/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1001151	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/19/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
+1004176	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/15/2022	10/12/2022	6/15/2022	No	
+1005466	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/7/2023		\"Review Needed.
+No PATH determination in
+more than 90 days.\"		
+1006082	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/18/2022	5/5/2023	5/5/2023	No	
+1006534	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/14/2022		\"Review Needed.
+No PATH determination in
+more than 90 days.\"		
+1006583	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/7/2022		11/7/2023	Missing	
+1006694	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	3/31/2023	5/9/2023	3/31/2023	No	
+1007514	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	9/27/2022	Missing All Determination Details	Missing All Determination Details	
+1012069	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	2/21/2023	2/27/2023	Missing All Determination Details	Missing All Determination Details	
+1014949	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/21/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1015579	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	9/1/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1018337	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	12/13/2022	Missing All Determination Details	Missing All Determination Details	
+1018337	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	1/25/2023		1/31/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+1019637	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	9/23/2022	11/9/2022	Missing All Determination Details	Missing All Determination Details	
+1020790	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	12/14/2022	Missing All Determination Details	Missing All Determination Details	
+1021495	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	9/12/2022	5/9/2023	5/9/2023	No	
+1021801	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	1/31/2023	1/31/2023	No	
+1022522	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	Determined not PATH enrolled. Exit required	5/5/2023	No	
+1023474	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	12/28/2022	Missing All Determination Details	Missing All Determination Details	
+1024113	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	7/15/2022	9/8/2022	Missing All Determination Details	Missing All Determination Details	
+1024113	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/21/2022		2/22/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+1024242	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	9/7/2022	12/13/2022	Missing All Determination Details	Missing All Determination Details	
+1024496	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	7/27/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1024799	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	9/9/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1025027	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/15/2023				
+1025426	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/12/2023				
+1025876	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	7/15/2022	9/27/2022	Missing All Determination Details	Missing All Determination Details	
+1025923	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	8/10/2022	Missing All Determination Details	Missing All Determination Details	
+1025925	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	8/10/2022	Missing All Determination Details	Missing All Determination Details	
+1026332	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	10/12/2022	Missing All Determination Details	Missing All Determination Details	
+1027141	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	1/27/2023		3/10/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+1027870	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/19/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1028137	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	8/15/2022	Missing All Determination Details	Missing All Determination Details	
+1028139	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	1/25/2023	1/25/2023	No	
+1028519	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	8/16/2022	Missing All Determination Details	Missing All Determination Details	
+1028609	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/21/2022	5/9/2023	5/9/2023	No	
+1029155	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	8/16/2022	Missing All Determination Details	Missing All Determination Details	
+1029632	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	12/13/2022	Missing All Determination Details	Missing All Determination Details	
+1029749	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	8/11/2022	Missing All Determination Details	Missing All Determination Details	
+1029762	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	7/15/2022	9/27/2022	7/15/2022	No	
+1029971	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/19/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1030226	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/8/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1030226	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/6/2023	5/9/2023	4/6/2023	No	
+1030479	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/24/2022	1/27/2023	1/25/2023	No	
+1031045	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/1/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1031429	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/1/2022	8/11/2022	Missing All Determination Details	Missing All Determination Details	
+1031851	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/11/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
+1032025	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/8/2022	1/24/2023	8/8/2022	No	
+1032271	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/17/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1032285	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/17/2022	9/27/2022	Missing All Determination Details	Missing All Determination Details	
+1032568	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	7/29/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1032585	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/1/2022	9/12/2022	Missing All Determination Details	Missing All Determination Details	
+1032853	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	1/18/2023	1/26/2023	1/26/2023	No	
+1032959	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/15/2022	1/26/2023	1/26/2023	No	
+1033014	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/19/2022	1/26/2023	1/26/2023	No	
+1033061	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/3/2022	9/27/2022	Missing All Determination Details	Missing All Determination Details	
+1033061	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	2/23/2023		\"Review Needed.
+No PATH determination in
+more than 90 days.\"		
+1033586	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/20/2023				
+1033835	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	7/29/2022	9/27/2022	9/27/2022	No	
+1033835	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	12/1/2022	5/9/2023	9/27/2022	No	
+1034448	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/11/2022	11/13/2022	Missing All Determination Details	Missing All Determination Details	
+1034449	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	3/22/2023	7/11/2023	3/10/2023	No	
+1034964	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	9/26/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1034964	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/5/2023		\"Review Needed.
+No PATH determination in
+more than 90 days.\"		
+1035043	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	1/16/2023	4/6/2023	4/6/2023	No	
+1035506	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/24/2023		5/8/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+1035555	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	9/2/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1035561	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	8/22/2022	5/9/2023	5/9/2023	No	
+1036282	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/31/2022	11/10/2022	Missing All Determination Details	Missing All Determination Details	
+1036555	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/27/2022	1/26/2023	10/27/2022	No	
+1036645	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/8/2023	6/22/2023	Missing All Determination Details	Missing All Determination Details	
+1036793	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	1/27/2023	3/21/2023	1/24/2023	No	
+1036980	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/31/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1036984	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	12/14/2022	1/24/2023	12/15/2022	No	
+1037034	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	12/27/2022	1/26/2023	12/27/2022	No	
+1037049	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	10/14/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1037066	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/8/2022	1/24/2023	Missing All Determination Details	Missing All Determination Details	
+1037216	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	11/3/2022	1/26/2023	11/3/2022	No	
+1037663	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	2/1/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
+1038184	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/8/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
+1038261	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	1/4/2023	1/24/2023	1/6/2023	No	
+1038325	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/7/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
+1038586	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/8/2023	6/7/2023	Missing Determination Date	No	
+1038588	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	2/3/2023	3/31/2023	3/31/2023	No	
+1038950	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	1/24/2023		\"Review Needed.
+No PATH determination in
+more than 90 days.\"		
+1038977	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	1/24/2023	5/22/2023	5/22/2023	No	
+1039444	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	3/22/2023	7/11/2023	3/22/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+1039581	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	2/7/2023		3/1/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+1039637	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	2/7/2023		3/22/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+1039900	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	2/13/2023	5/11/2023	5/11/2023	No	
+1039925	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	2/15/2023	3/22/2023	3/3/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+1040068	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	2/20/2023	5/22/2023	5/22/2023	No	
+1040348	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/6/2023	Determined not PATH enrolled. Exit required	Missing Determination Date	No	
+1040348	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/3/2023	6/7/2023	Missing Determination Date	No	
+1040366	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	3/3/2023	4/25/2023	3/21/2023	No	
+1040519	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	3/9/2023	4/13/2023	3/9/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+1040551	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	2/16/2023	2/22/2023	2/22/2023	No	
+1040657	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	3/24/2023	4/3/2023	3/24/2023	No	
+1041182	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/3/2023	Determined not PATH enrolled. Exit required	5/3/2023	No	
+1041245	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/4/2023	Determined not PATH enrolled. Exit required	4/4/2023	No	
+1041256	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/10/2023	7/11/2023	4/10/2023	Yes	Client PATH enrolled. PATH services & referrals required to be recorded
+1041353	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/20/2023	6/7/2023	Missing Determination Date	No	
+1041366	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/11/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
+1041403	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/11/2023		\"Review Needed.
+No PATH determination in
+more than 90 days.\"		
+1041433	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/5/2023				
+1041575	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/26/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
+1041728	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/11/2023	6/7/2023	Missing Determination Date	No	
+1041811	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/26/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
+1041812	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/26/2023				
+1041834	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/26/2023				
+1041863	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	4/26/2023	7/10/2023	Missing All Determination Details	Missing All Determination Details	
+1042116	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/19/2023				
+1042129	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/19/2023				
+1042208	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/31/2023				
+1042288	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/15/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
+1042417	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/18/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
+1042470	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/22/2023				
+1042471	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/22/2023				
+1042738	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	5/23/2023				
+1042918	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/8/2023				
+1043206	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/11/2023				
+1043548	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/11/2023				
+1043549	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/15/2023				
+1043556	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/15/2023				
+1043563	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/25/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
+")
+# output
+print("client data tbd")
 ```
 
 <!-- #### Review Steps: -->
