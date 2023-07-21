@@ -186,11 +186,13 @@ Download A009 and A010 Report with the specifications listed below.  The pull up
 
 #### GitHub Links:
 * Project Website (i.e. this document): https://timbender-ncceh.github.io/A009_A010_dq/
-* Repository: https://github.com/timbender-ncceh/A009_A010_dq/tree/main
+
+<!-- * Repository: https://github.com/timbender-ncceh/A009_A010_dq/tree/main -->
 * Projet Issues / Comments: https://github.com/timbender-ncceh/A009_A010_dq/issues
 
 #### ZenGuide Links:
-* ZenGuide_General: https://ncceh.zendesk.com/
+
+<!-- * ZenGuide_General: https://ncceh.zendesk.com/ -->
 * A009: https://ncceh.zendesk.com/hc/en-us/articles/16245113253523-A009-PATH-Details-Data-Quality-Report-Guide
 * A010: https://ncceh.zendesk.com/hc/en-us/articles/16273061844883-A010-PATH-Services-Referrals-Report-Guide
 * PATH_Dashboard: https://ncceh.zendesk.com/hc/en-us/articles/15097522537235
@@ -203,7 +205,7 @@ Download A009 and A010 Report with the specifications listed below.  The pull up
   - See ZenGuide
 * Query Setup
   - See ZenGuide for filetype and output directions
-  - Click the three dot symbol (…)(⋯) not the name of the report to set it up and run it.  This allows for report configuration. 
+  - Click the three dot symbol (⋯) not the name of the report to set it up and run it.  This allows for report configuration. 
   - You will need to select one provider_id (see notes below) and compare to PA
 
 ```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=TRUE}
@@ -246,13 +248,14 @@ cat(glue("Project ID:\t{proj_id}\nProv. Name:\t{proj_name}"))
 ```
 
 ### PATH Dashboard Results
+#### Report Summary Data:
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 print(psd.df)
 ```
 
 
 ### A009 Results
-#### Report Data:
+#### Report Summary Data:
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 da009 <- funA009(proj_summary.a009, 
                  prov_prompt, 
@@ -260,8 +263,8 @@ da009 <- funA009(proj_summary.a009,
 print(da009)
 ```
 
-#### Review Steps:
-[not sure - read ZenGuide and started answering the review questions but they seemed too specific for this QA Task]
+<!-- #### Review Steps: -->
+<!-- [not sure - read ZenGuide and started answering the review questions but they seemed too specific for this QA Task] -->
 
 <!-- * Date of Engagement recorded prior to Project Start Date or after the Project Exit Date. -->
 <!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
@@ -300,7 +303,7 @@ print(da009)
 <!-- ``` -->
 
 ### A010 Results
-#### Report Data:
+#### Report Summary Data:
 ```{r A010 Data, echo=FALSE, message=FALSE, warning=FALSE}
 
 da010 <- funA010(sum.data = proj_summary.a010, 
@@ -310,9 +313,8 @@ print(da010)
 
 ```
 
-
-#### Review Steps:
-[hidden for now b/c I don't think this is the actual point of this exercise]
+<!-- #### Review Steps: -->
+<!-- [hidden for now b/c I don't think this is the actual point of this exercise] -->
 
 
 <!-- * Confirm the total clients with a project entry/exit appears accurate for the number of clients served/contacted during the reporting period.   -->
