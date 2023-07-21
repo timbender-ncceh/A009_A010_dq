@@ -751,6 +751,7 @@ print(da010)
 
 ```
 #### Client Data: 
+Client_Ids which are un-matched between Path_Dashboard and A010:
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 # input
 client.a010 <- read_tsv("Client Uid	Entry Exit Provider Id	Entry Date	Exit Date	Date of Status Determination(4332)	Client Became Enrolled in PATH Program(4333)	PATH Services & Referrals required
