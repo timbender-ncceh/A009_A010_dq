@@ -351,7 +351,7 @@ display: none;
 
 <h1 class="title toc-ignore">A009 and A010 DQ Checks</h1>
 <h4 class="author">NCCES_tim_bender</h4>
-<h4 class="date">2023-07-20 14:56:11</h4>
+<h4 class="date">2023-07-21 08:30:12</h4>
 
 </div>
 
@@ -489,51 +489,30 @@ but they seemed too specific for this QA Task]</p>
 </div>
 <div id="review-steps-1" class="section level4">
 <h4>Review Steps:</h4>
-<ul>
-<li>Confirm the total clients with a project entry/exit appears accurate
-for the number of clients served/contacted during the reporting period.
-<ul>
-<li>[Line 1] == [Line 2] + [Line 4] + [Line 6]</li>
-</ul></li>
-</ul>
-<pre><code>## 185 == 152 + 19 + 19
-## FALSE</code></pre>
-<ul>
-<li>Confirm the number of clients marked as PATH enrolled appears
-accurate.
-<ul>
-<li>[Line 6] == [Line 7] + [Line 8] &amp; [Line 6] == [Line 9] + [Line
-10]</li>
-</ul></li>
-</ul>
-<pre><code>## 19 == 20 + -1 &amp; 19 == 14 + 5
-## TRUE</code></pre>
-<ul>
-<li>The total clients with PATH enrollment should equal the “total PATH
-enrolled clients with services” + “total PATH enrolled clients without
-services”.
-<ul>
-<li>[Line 6] == [Line 7] + [Line 8]</li>
-<li>If the numbers do not add up, you will want to check for
-duplicate/dual enrollments (the same client served more than once during
-the reporting period).</li>
-</ul></li>
-</ul>
-<pre><code>## 19 == 20 + -1
-## TRUE</code></pre>
-<ul>
-<li>The total clients with PATH enrollment should also equal the “total
-PATH enrolled clients with referrals” + “total PATH enrolled clients
-without referrals”.
-<ul>
-<li>[Line 6] == [Line 9] + [Line 10]</li>
-<li>If the numbers do not add up, you will want to check for
-duplicate/dual enrollments (the same client served more than once during
-the reporting period).</li>
-</ul></li>
-</ul>
-<pre><code>## 19 == 14 + 5
-## TRUE</code></pre>
+<p>[hidden for now b/c I don’t think this is the actual point of this
+exercise]</p>
+<!-- * Confirm the total clients with a project entry/exit appears accurate for the number of clients served/contacted during the reporting period.   -->
+<!--   - [Line 1] == [Line 2] + [Line 4] + [Line 6] -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{da010$value[1]} == {da010$value[2]} + {da010$value[4]} + {da010$value[6]}\n{da010$value[1] == da010$value[2] + da010$value[4] + da010$value[6]}")) -->
+<!-- ``` -->
+<!-- * Confirm the number of clients marked as PATH enrolled appears accurate.   -->
+<!--   - [Line 6] == [Line 7] + [Line 8] & [Line 6] == [Line 9] + [Line 10] -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{da010$value[6]} == {da010$value[7]} + {da010$value[8]} & {da010$value[6]} == {da010$value[9]} + {da010$value[10]}\n{da010$value[6] == da010$value[7] + da010$value[8] & da010$value[6] == da010$value[9] + da010$value[10]}")) -->
+<!-- ```   -->
+<!-- * The total clients with PATH enrollment should equal the "total PATH enrolled clients with services" + "total PATH enrolled clients without services".   -->
+<!--   - [Line 6] == [Line 7] + [Line 8] -->
+<!--   - If the numbers do not add up, you will want to check for duplicate/dual enrollments (the same client served more than once during the reporting period).  -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{da010$value[6]} == {da010$value[7]} + {da010$value[8]}\n{da010$value[6] == da010$value[7] + da010$value[8]}")) -->
+<!-- ``` -->
+<!-- * The total clients with PATH enrollment should also equal the "total PATH enrolled clients with referrals" + "total PATH enrolled clients without referrals".   -->
+<!--   - [Line 6] == [Line 9] + [Line 10]  -->
+<!--   - If the numbers do not add up, you will want to check for duplicate/dual enrollments (the same client served more than once during the reporting period). -->
+<!-- ```{r echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cat(glue("{da010$value[6]} == {da010$value[9]} + {da010$value[10]}\n{da010$value[6] == da010$value[9] + da010$value[10]}")) -->
+<!-- ``` -->
 </div>
 </div>
 <div id="qa-findings" class="section level3">
