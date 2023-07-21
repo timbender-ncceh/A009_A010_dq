@@ -351,7 +351,7 @@ display: none;
 
 <h1 class="title toc-ignore">A009 and A010 DQ Checks</h1>
 <h4 class="author">NCCES_tim_bender</h4>
-<h4 class="date">2023-07-21 11:41:48</h4>
+<h4 class="date">2023-07-21 13:38:04</h4>
 
 </div>
 
@@ -413,8 +413,8 @@ compare to PA</li>
 </div>
 <div id="path-dashboard-results" class="section level3">
 <h3>PATH Dashboard Results</h3>
-<div id="report-summary-data" class="section level4">
-<h4>Report Summary Data:</h4>
+<div id="summary-data" class="section level4">
+<h4>Summary Data:</h4>
 <pre><code>## # A tibble: 11 × 2
 ##    `Persons served during this reporting period:`                          Count
 ##    &lt;chr&gt;                                                                   &lt;dbl&gt;
@@ -429,22 +429,41 @@ compare to PA</li>
 ##  9 14. Number of new persons contacted this reporting period who became e…    17
 ## 10 15. Number with active, enrolled PATH status at any point during the d…    18
 ## 11 16. Number of active, enrolled PATH clients receiving community mental…    14</code></pre>
-</div>
-<div id="client-data" class="section level4">
-<h4>Client Data:</h4>
-<pre><code>## [1] &quot;not necessary here - will be joined below&quot;</code></pre>
+<!-- #### Client Data:  -->
 </div>
 </div>
 <div id="a009-results" class="section level3">
 <h3>A009 Results</h3>
-<div id="report-summary-data-1" class="section level4">
-<h4>Report Summary Data:</h4>
+<div id="summary-data-1" class="section level4">
+<h4>Summary Data:</h4>
 <pre><code>##    prov_id undup_clients n_entries n_clients_wDOE n_exits
 ## 1:   20477           185       199            129     153</code></pre>
 </div>
-<div id="client-data-1" class="section level4">
+<div id="client-data" class="section level4">
 <h4>Client Data:</h4>
-<pre><code>## [1] &quot;client data tbd&quot;</code></pre>
+<p>Client_Ids which are un-matched between Path_Dashboard and A009:</p>
+<pre><code>## # A tibble: 19 × 3
+##    `Client ID` in_path in_a009
+##          &lt;dbl&gt; &lt;lgl&gt;   &lt;lgl&gt;  
+##  1      397056 FALSE   TRUE   
+##  2      509097 FALSE   TRUE   
+##  3     1023474 FALSE   TRUE   
+##  4     1020790 FALSE   TRUE   
+##  5      432441 FALSE   TRUE   
+##  6     1004176 FALSE   TRUE   
+##  7     1026332 FALSE   TRUE   
+##  8     1032285 FALSE   TRUE   
+##  9     1007514 FALSE   TRUE   
+## 10     1029155 FALSE   TRUE   
+## 11     1028519 FALSE   TRUE   
+## 12      505501 FALSE   TRUE   
+## 13     1028137 FALSE   TRUE   
+## 14      389629 FALSE   TRUE   
+## 15      392786 FALSE   TRUE   
+## 16     1029749 FALSE   TRUE   
+## 17     1031429 FALSE   TRUE   
+## 18     1025923 FALSE   TRUE   
+## 19     1025925 FALSE   TRUE</code></pre>
 <!-- #### Review Steps: -->
 <!-- [not sure - read ZenGuide and started answering the review questions but they seemed too specific for this QA Task] -->
 <!-- * Date of Engagement recorded prior to Project Start Date or after the Project Exit Date. -->
@@ -483,8 +502,8 @@ compare to PA</li>
 </div>
 <div id="a010-results" class="section level3">
 <h3>A010 Results</h3>
-<div id="report-summary-data-2" class="section level4">
-<h4>Report Summary Data:</h4>
+<div id="summary-data-2" class="section level4">
+<h4>Summary Data:</h4>
 <pre><code>##                                          variable value
 ##  1:         Total Clients with Project Entry/Exit   185
 ##  2:                   Total Clients with Services   152
@@ -497,9 +516,30 @@ compare to PA</li>
 ##  9:    Total PATH enrolled Clients with Referrals    14
 ## 10: Total PATH enrolled Clients without Referrals     5</code></pre>
 </div>
-<div id="client-data-2" class="section level4">
+<div id="client-data-1" class="section level4">
 <h4>Client Data:</h4>
-<pre><code>## [1] &quot;client data tbd&quot;</code></pre>
+<pre><code>## # A tibble: 19 × 3
+##    `Client ID` in_path in_a010
+##          &lt;dbl&gt; &lt;lgl&gt;   &lt;lgl&gt;  
+##  1      389629 FALSE   TRUE   
+##  2      392786 FALSE   TRUE   
+##  3      397056 FALSE   TRUE   
+##  4      432441 FALSE   TRUE   
+##  5      505501 FALSE   TRUE   
+##  6      509097 FALSE   TRUE   
+##  7     1004176 FALSE   TRUE   
+##  8     1007514 FALSE   TRUE   
+##  9     1020790 FALSE   TRUE   
+## 10     1023474 FALSE   TRUE   
+## 11     1025923 FALSE   TRUE   
+## 12     1025925 FALSE   TRUE   
+## 13     1026332 FALSE   TRUE   
+## 14     1028137 FALSE   TRUE   
+## 15     1028519 FALSE   TRUE   
+## 16     1029155 FALSE   TRUE   
+## 17     1029749 FALSE   TRUE   
+## 18     1031429 FALSE   TRUE   
+## 19     1032285 FALSE   TRUE</code></pre>
 <!-- #### Review Steps: -->
 <!-- [hidden for now b/c I don't think this is the actual point of this exercise] -->
 <!-- * Confirm the total clients with a project entry/exit appears accurate for the number of clients served/contacted during the reporting period.   -->
@@ -528,7 +568,29 @@ compare to PA</li>
 </div>
 <div id="qa-findings" class="section level3">
 <h3>QA FINDINGS</h3>
-<p>[to be completed]</p>
+<p>comparing A009 and A010 Client Tables from Above:</p>
+<pre><code>## # A tibble: 19 × 5
+##    `Client ID` in_path.a009 in_path.a010 in_a009 in_a010
+##          &lt;dbl&gt; &lt;lgl&gt;        &lt;lgl&gt;        &lt;lgl&gt;   &lt;lgl&gt;  
+##  1      397056 FALSE        FALSE        TRUE    TRUE   
+##  2      509097 FALSE        FALSE        TRUE    TRUE   
+##  3     1023474 FALSE        FALSE        TRUE    TRUE   
+##  4     1020790 FALSE        FALSE        TRUE    TRUE   
+##  5      432441 FALSE        FALSE        TRUE    TRUE   
+##  6     1004176 FALSE        FALSE        TRUE    TRUE   
+##  7     1026332 FALSE        FALSE        TRUE    TRUE   
+##  8     1032285 FALSE        FALSE        TRUE    TRUE   
+##  9     1007514 FALSE        FALSE        TRUE    TRUE   
+## 10     1029155 FALSE        FALSE        TRUE    TRUE   
+## 11     1028519 FALSE        FALSE        TRUE    TRUE   
+## 12      505501 FALSE        FALSE        TRUE    TRUE   
+## 13     1028137 FALSE        FALSE        TRUE    TRUE   
+## 14      389629 FALSE        FALSE        TRUE    TRUE   
+## 15      392786 FALSE        FALSE        TRUE    TRUE   
+## 16     1029749 FALSE        FALSE        TRUE    TRUE   
+## 17     1031429 FALSE        FALSE        TRUE    TRUE   
+## 18     1025923 FALSE        FALSE        TRUE    TRUE   
+## 19     1025925 FALSE        FALSE        TRUE    TRUE</code></pre>
 <!-- #### Current Status -->
 <!-- ```{r A010 status, echo=FALSE, message=FALSE, warning=FALSE} -->
 <!-- tbl010_status <- out1[out1$report =="A010",c("uid","pid")] %>% -->

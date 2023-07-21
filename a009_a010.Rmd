@@ -248,21 +248,187 @@ cat(glue("Project ID:\t{proj_id}\nProv. Name:\t{proj_name}"))
 ```
 
 ### PATH Dashboard Results
-#### Report Summary Data:
+#### Summary Data:
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 print(psd.df)
 ```
-#### Client Data: 
+<!-- #### Client Data:  -->
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 # input
-
+path.client <- read_tsv("Client ID	Client Name
+507954	Allen, Kamal D
+389641	Allison, Artez Lamont
+480954	Allison, Billy Ray
+1042918	Allison, Matthew
+355458	Armentrout, Jody
+425143	Bailey, Danny Willliam
+1032025	Baker, Brian Keith
+1042738	Barnes, Keith
+1040551	Barnes, Sebastian Michael
+1041812	Barnette, Steven
+1029762	Bender, Selena Marie
+365351	Bennett, Aaron
+484376	Bethea, Jackie Dione
+1043549	Bingman, Beth
+1018337	Black, Christopher Phillip
+1029971	Blankenship, Jeremy
+1025027	Bobson, Caleb Jaron
+1040366	Bolik, Caleb Aaron
+262283	Boone, Heather Lynn
+461208	Bradford, Jennifer Sue
+1024496	Brown, Dominic Dwight
+1038588	Bruce, John Robert
+1041182	Bruton, Lisah
+201239	Caldwell, Eric
+1037049	Caldwell, Thanda Annissa
+1029632	Callender, Deminica Lucille
+1024242	Cameron, Kareem Ali
+467741	Campbell, James Paul
+1041863	Carrigan, Crayshawn Chase
+1042470	Ceballos, David
+1030226	Chandler, Charlene Rene
+356394	Chiodo, Heather
+493521	Clower, Joshua William
+329271	Cole, Joshua R
+1006534	Coley, Mariah Cynthia
+480879	Colletti, Francis James
+1037066	Connor, Ronald Emmanual
+1033835	Crawford-Albright, Dustin Michael
+151029	Critcher, Linda I.
+151030	Critcher, Margaretta Lee
+1025426	DAVIS, NOAH MICHAEL
+1039581	Depew, Kylie Nicole
+1024799	Deyoung, Robert Michael, SR
+270112	Diggs, Terrell Moray
+1000167	Dodson, Hope Antoinette
+1042208	Dudley, Choyce Ramseur
+1025876	Dunn, Gavin Robert
+1006082	Elder, Phillip Eugene
+1041245	Elliott, Laura Stephanie
+1043556	Estes, Bobbie
+1036984	Evans, Racquel Patrice
+1040068	Farr, Gary Owen
+1019637	Faxon, Cameron J
+1032271	Feldman, William
+1024113	FERRELL, DONALD KELLY
+1001151	Fitzpatrick, Michael Obrian
+1033061	Forbes, Shawn Anthony
+1039925	Fraley, Victor A.
+321958	Futrell, Christopher James
+1034449	Gaines, Elijah Cordell
+411676	Gamble, Michael Eugene, II
+1041256	Gambrell, Derek Kevin
+1035555	Gay, Christpher Brandon
+1037216	Gillespie, Tyrene
+1037034	Glasco, James Wesley
+433524	Glover, James, III
+310859	Goforth, Bryant Eugene
+441398	Gonzalez, Rafael
+370219	Gresham, Willie
+219191	Hamlin, Marion Elizabeth
+1031045	Hartis, Christopher George
+1035043	Hatcher, Dallas Allen
+249741	Hatcher, Kimberly Dawn
+404837	Henderson, Jayden
+1037663	Hodgdon, Damion Michael
+1038977	Hunsucker, Michael Todd
+1041811	Hutton, Xavier
+435635	Jamison, John Harry
+476143	Jennette, Damon T
+510657	Johnston, Meagan Leigh
+1031851	Jolley, Phillip
+1038261	Jones, Vincent D
+416722	kelley, crystal
+197800	Kermmoade, Linda Marie
+1022522	Kindred, John Peter
+281571	Kyles, Timothy Cale
+1036555	Lail, Rebecca Anne
+1035561	Leeman, Michael Justin
+1038950	London, Kimberly
+1042417	Lopez, Michelle
+1036793	Love, Daniel Shai
+1028139	LOWE, CURTIS EUGENE
+1006694	Mack, Christian Maurice
+249840	Mack, Katricia Diane
+1041728	Marin, Kristopher Rino Bradley
+1015579	Marlowe, David Eugene
+1039637	Marsh, Matthew Tyler
+1036282	Martin, Jennifer Rose
+423512	Martinez, Elizabeth
+1005466	McAdams, Donna Staley, `
+462649	McDonald, Princeton
+1000165	Meade, Timothy William
+1042129	Meimar, Michael
+1036645	Millenovich, Andrew Joseph
+470925	Miller, Ginger D
+1043563	Mitchell, Chad
+292196	Morgan, David Ray
+1036980	Morris-Pompey, Rzavier
+381963	New, Jonathan Edwards
+1040348	Oliver, Daniell
+208115	Owens, Donnie Alexander
+391349	Patchett, Edward Daniel
+1040657	Payne, Adam Clinton
+1033014	Payret, Nicholas
+1021801	Plath, Eleanor Louise
+139583	Pruitt, Debra M
+1041834	Pucket, RJ
+274724	Puckett, David Lee
+211467	Pychon, Courtney Anne
+1040519	Rankin, Frederick
+495357	Roberts, Ricky Carlton, Jr.
+1042288	Roberts, Travis
+1041366	Robinson, Anthony
+419021	Ruark, Brandon Scott
+1038586	Rushing, Sammy Scott
+1043548	Sampson, Junior
+1034964	Scarborough, Jordan Benjamin
+1041433	Schumaker, Donald Ray
+429076	Schwantes, Frank Robert
+1032568	Seamon, Donald
+1039444	Shepherd, Peter Jermaine
+1032853	Sherriff, Ryan Patrick
+1028609	Snow, Tony Lee
+1035506	Sousa, Ryan Henry
+490805	Spencer, Lisa Ann
+1032585	Steele, Mackenzie
+1030479	Stegall, Sabrina Ann
+1042116	Stevens, Tyler Jerome
+163758	Stevenson, Alvin
+1027870	Stillson, Kim Aydel
+1014949	Stoner, Jesse Jacob
+1006583	Stuart, Andrew Gray
+1034448	Thomas, Daisy Jeniyah
+132067	Thomas, Leonard Richard
+1012069	Thompson, Monique
+1033586	Tippins, Michelle Ann
+1042471	Topley, Scott
+1041353	Urieta, Letitia I
+78984	Via, James R
+1041575	Walker, Michael Dean
+1039900	Waller, Harry Wayne
+1043206	Warren, Brandon
+1027141	Welborn, Judy Ann
+396787	Welborn, Michael Paul
+146438	Whitaker, Rodney Neal
+1038184	White, Gary Oneal
+212556	Whitonis, Brittany N
+1041403	Williams, Chris
+1038325	Williams, Douglas Scott
+1032959	Williams, Kareem
+158471	Williams-Walkup, Christina marie
+474876	Wilson, Timothy Arness
+457423	Wisowaty, Cestlavie
+282047	Witt, Terry Egor
+359902	Zelo, Daniel
+1021495	ZILIO, GUY G")
 # output
-print("not necessary here - will be joined below")
+# cat(glue("df_name:\t\tpath.client\ncol_names:\t{paste(colnames(path.client), sep = \", \", collapse = \", \")}"))
 ```
 
 
 ### A009 Results
-#### Report Summary Data:
+#### Summary Data:
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 da009 <- funA009(proj_summary.a009, 
                  prov_prompt, 
@@ -270,6 +436,7 @@ da009 <- funA009(proj_summary.a009,
 print(da009)
 ```
 #### Client Data: 
+Client_Ids which are un-matched between Path_Dashboard and A009:
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 # input
 client.a009 <- read_tsv("Client Uid	Entry Exit Group UID	Entry Exit Provider Id	Entry Date	Exit Date	Length of Time (active clients)	Date of Engagement	Date of Status Determination(4332)	Client Became Enrolled in PATH Program(4333)	If no, reason not enrolled(4334)	Connection with SOAR (PATH Only)(4335)
@@ -519,8 +686,19 @@ Missing DOE\"	Review Needed	Review Needed		MISSING
 1025925	1172051	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	06/01/2022	08/10/2022	Exited Client	06/01/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
 381963	1166180	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	07/25/2022	08/02/2022	Exited Client	07/25/2022	REQUIRED FOR EXITED CLIENTS	REQUIRED FOR EXITED CLIENTS		MISSING
 ")
+
+results.a009 <- full_join(mutate(path.client, 
+                 in_path = T)[,c(1,3)],
+       mutate(client.a009, 
+              in_a009 = T)[,c("Client Uid", "in_a009")], 
+       by = c("Client ID" = "Client Uid")) %>%
+  .[!complete.cases(.),] %>%
+  mutate(., 
+         in_path = ifelse(is.na(in_path), F, in_path), 
+         in_a009 = ifelse(is.na(in_a009), F, in_a009))
 # output
-print("client data tbd")
+# cat(glue("df_name:\t\tclient.a009\ncol_names:\t{paste(colnames(client.a009), sep = \"||\", collapse = \"||\")}"))
+print(results.a009)
 ```
 
 <!-- #### Review Steps: -->
@@ -563,7 +741,7 @@ print("client data tbd")
 <!-- ``` -->
 
 ### A010 Results
-#### Report Summary Data:
+#### Summary Data:
 ```{r A010 Data, echo=FALSE, message=FALSE, warning=FALSE}
 
 da010 <- funA010(sum.data = proj_summary.a010, 
@@ -791,7 +969,18 @@ more than 90 days.\"
 1043563	Diakonos, Inc. - Iredell County - Street Outreach - SO - PATH(20477)	6/25/2023	7/11/2023	Missing All Determination Details	Missing All Determination Details	
 ")
 # output
-print("client data tbd")
+results.a010 <- full_join(mutate(path.client, 
+                 in_path = T)[,c(1,3)],
+       mutate(client.a010, 
+              in_a010 = T)[,c("Client Uid", "in_a010")], 
+       by = c("Client ID" = "Client Uid")) %>%
+  .[!complete.cases(.),] %>%
+  mutate(., 
+         in_path = ifelse(is.na(in_path), F, in_path), 
+         in_a010 = ifelse(is.na(in_a010), F, in_a010))
+
+print(results.a010)
+
 ```
 
 <!-- #### Review Steps: -->
@@ -826,7 +1015,17 @@ print("client data tbd")
 
 
 ### QA FINDINGS
-[to be completed]
+comparing A009 and A010 Client Tables from Above:
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+print(full_join(x = results.a009, 
+                y = results.a010, 
+                by = c("Client ID"), 
+      suffix = c(".a009", ".a010"))[,c(1,2,4,3,5)])
+# results.a009
+# results.a010
+```
+
 
 <!-- #### Current Status -->
 <!-- ```{r A010 status, echo=FALSE, message=FALSE, warning=FALSE} -->
